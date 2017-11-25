@@ -16,7 +16,7 @@ $(document).ready(function() {
 
             mainTitle.innerHTML = jsonObj.title.main;
             subTitle.innerHTML = jsonObj.title.sub;
-            introContent[0].appendChild(lead);
+            introContent[0].appendChild(introLead);
             introContent[0].appendChild(span);
             introContent[1].innerHTML = jsonObj.intro.en_content;
         }
