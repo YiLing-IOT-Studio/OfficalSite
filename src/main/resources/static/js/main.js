@@ -1,26 +1,35 @@
-$(document).ready(function () {
+$(document).ready(function() {
     // Home Page
-    (function () {
-        function dataLoad(jsonObj){
-            var homePage = document.getElementsByClassName('section')[0];
-            var h1 = homePage.getElementsByTagName('h1')[0];
-            var h2 = homePage.getElementsByTagName('h2')[0];
-            var ylIntro = homePage.getElementsByClassName('yl-intro')[0];
-            var paras = ylIntro.getElementsByTagName('p');
-            var lead = document.createElement('span');
-            lead.classList = 'lead';
-            lead.innerHTML = '翼灵物联工作室';
+    (function() {
+        function dataLoad(jsonObj) {
+            var currentPage = document.getElementsByClassName('section')[0];
+            var mainTitle = currentPage.getElementsByTagName('h1')[0];
+            var subTitle = currentPage.getElementsByTagName('h2')[0];
+            var intro = currentPage.getElementsByClassName('yl-intro')[0];
+            var introContent = intro.getElementsByTagName('p');
+
+            var introLead = document.createElement('span');
+            introLead.classList = 'lead';
+            introLead.innerHTML = jsonObj.intro.lead;
             var span = document.createElement('span');
-            span.innerHTML = ' - 一支追求技术、开放、自由的大学生团队。';
-            h1.innerHTML = jsonObj.title[0];
-            h2.innerHTML = jsonObj.title[1];
-            paras[0].appendChild(lead);
-            paras[0].appendChild(span);
-            paras[1].innerHTML = 'YiLing-ers pursue technology, openness and freedom.';
+            span.innerHTML = jsonObj.intro.content;
+
+            mainTitle.innerHTML = jsonObj.title.main;
+            subTitle.innerHTML = jsonObj.title.sub;
+            introContent[0].appendChild(lead);
+            introContent[0].appendChild(span);
+            introContent[1].innerHTML = jsonObj.intro.en_content;
         }
         dataLoad({
-            title: ['翼灵物联工作室', 'The YiLing iot Studio'],
-            intro: []
+            title: {
+                main: '翼灵物联工作室',
+                sub: 'YiLing iot Studio'
+            },
+            intro: {
+                lead: '翼灵物联工作室',
+                content: ' - 一支追求技术、开放、自由的大学生团队。',
+                en_content: 'YiLing-ers pursue technology, openness and freedom.'
+            }
         });
     })();
 });
@@ -32,10 +41,10 @@ $(document).ready(function() {
         //Navigation
         menu: '#menu',
         lockAnchors: false,
-        anchors: ['index', 'Persure', 'OpenSource', 'Excellent-ers', 'JoinUs', 'AboutUs'],
+        anchors: ['index', 'Pursue', 'OpenSource', 'Excellent-ers', 'JoinUs', 'AboutUs'],
         navigation: true,
         navigationPosition: 'right',
-        navigationTooltips: ['index', 'Persure', 'OpenSource', 'Excellent-ers', 'JoinUs', 'AboutUs'],
+        navigationTooltips: ['HomePage', '培养方向', '开源空间', '风云人物', '加入我们', '关于我们'],
         showActiveTooltip: true,
 
         //Scrolling
@@ -103,7 +112,7 @@ $(document).ready(function() {
     $('.yl-time').text(new Date().getFullYear());
 });
 
-(function(){
+(function() {
     // 百度地图API功能
     var map = new BMap.Map("allmap"); // 创建Map实例
     var point = new BMap.Point(104.190368, 30.835399);
@@ -166,19 +175,19 @@ $(document).ready(function() {
     map.addOverlay(marker); //在地图中添加marker
 }());
 
-(function(){
+(function() {
     var navItem = document.getElementsByClassName('nav-item');
-    var len = len=navItem.length;
+    var len = len = navItem.length;
     var line = [];
-    for (var i=0; i<len; i++){
-        (function (i) {
+    for (var i = 0; i < len; i++) {
+        (function(i) {
             line[i] = navItem[i].getElementsByClassName('line');
         })(i);
     }
-    for (var j=0; j<len; j++){
-        (function(j){
-            EventUtil.addHandler(navItem[j], 'mouseover', function () {
-                if (!hasClass(this.getElementsByClassName('nav-link')[0], 'disabled')){
+    for (var j = 0; j < len; j++) {
+        (function(j) {
+            EventUtil.addHandler(navItem[j], 'mouseover', function() {
+                if (!hasClass(this.getElementsByClassName('nav-link')[0], 'disabled')) {
                     line[j][0].style.backgroundColor = '#666';
                     line[j][1].style.backgroundColor = '#666';
                     move(line[j][0])
@@ -189,7 +198,7 @@ $(document).ready(function() {
                         .end();
                 }
             });
-            EventUtil.addHandler(navItem[j], 'mouseout', function () {
+            EventUtil.addHandler(navItem[j], 'mouseout', function() {
                 line[j][0].style.backgroundColor = 'transparent';
                 line[j][1].style.backgroundColor = 'transparent';
                 move(line[j][0])
