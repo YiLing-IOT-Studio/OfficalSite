@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+.header,
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+.header {
+    top: 0;
+    font-size: 14px;
+}
+
+.header .fa {
+    margin-right: 5px;
+}
+
+.footer {
+    bottom: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.icon {
+    width: 5em;
+    height: 5em;
+    color: #fff;
+    fill: #fff;
+    vertical-align: -0.15em;
+    overflow: hidden;
+}
+
+.yl-wantyou {
+    cursor: crosshair;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    background: #ccddff;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 300px;
+}
+
+.yl-wantyou span {
+    position: absolute;
+    font-family: verdana;
+    font-weight: bold;
+}
+
+.footer a {
+    color: #666;
+}
+.footer a:hover {
+    color: #222;
+}
+
+.footer .dot {
+    margin: 0 5px;
+}
+
+.footer .fa-github {
+    font-size: 16px;
+    color: #666;
+}
+
+.footer .fa-github:hover {
+    color: #222;
+}
+
+/*****************************/
+
+.section {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.yl-container {
+    position: absolute;
+    top: 5em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+.absolute-center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.yl-container-slide {
+    position: absolute;
+    top: 10em;
+    left: 9%;
+    transform: translateY(-50%);
+}
+
+.yl-container h1,
+.yl-container h2,
+.yl-container h3,
+.yl-container h4,
+.yl-container h5,
+.yl-container h6 {
+    margin-bottom: 1rem;
+}
+
+.yl-intro {
+    margin-top: 2rem;
+}
+
+.yl-group {
+    width: 648px;
+    margin-top: 3em;
+}
+
+.yl-group img {
+    width: 128px;
+    margin: 15px;
+}
+
+.yl-notes {
+    font-size: 12px;
+    color: #999;
+}
+
+.yl-translation {
+    font-size: 14px;
+    color: #666;
+}
+
+.yl-website {
+    display: flex;
+    justify-content: space-between;
+}
+
+.yl-website-link {
+    display: inline-block;
+    width: 64px;
+    margin: 2em;
+    font-size: 12px;
+    color: #222;
+}
+
+.yl-website-link img {
+    display: block;
+    width: auto;
+    height: 48px;
+    margin: 1em auto;
+}
+
+.footer {
+    padding-bottom: 1em;
+    font-size: 14px;
+}
+
+.yl-location {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 1px 5px 5px #666;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: transparent;
+}
+.line-top {
+    top: 5px;
+}
+.line-bottom {
+    bottom: 5px;
+}
+
+/*.nav-item:hover .line {
+    background-color: #666;
+}*/
+
+.btn-group {
+    margin: 20px 0;
+}
