@@ -1,25 +1,35 @@
 $(document).ready(function() {
-    // Home Page
     (function() {
-        function dataLoad(jsonObj) {
-            var currentPage = document.getElementsByClassName('section')[0];
-            var mainTitle = currentPage.getElementsByTagName('h1')[0];
-            var subTitle = currentPage.getElementsByTagName('h2')[0];
+        function dataLoad(jsonObj, idx) {
+            var currentPage = document.getElementsByClassName('section')[idx];
+            var mainTitle, subTitle;
+            if (idx === 0) {
+                mainTitle = currentPage.getElementsByTagName('h1')[0];
+                subTitle = currentPage.getElementsByTagName('h2')[0];
+            } else if (typeof idx === 'number'){
+                mainTitle = currentPage.getElementsByTagName('h2')[0];
+                subTitle = currentPage.getElementsByTagName('h3')[0];
+            }
+           
             var intro = currentPage.getElementsByClassName('yl-intro')[0];
             var introContent = intro.getElementsByTagName('p');
 
-            var introLead = document.createElement('span');
-            introLead.classList = 'lead';
-            introLead.innerHTML = jsonObj.intro.lead;
+            if (jsonObj.intro.lead){
+                var introLead = document.createElement('span');
+                introLead.classList = 'lead';
+                introLead.innerHTML = jsonObj.intro.lead;  
+                introContent[0].appendChild(introLead);         
+            }
+
             var span = document.createElement('span');
-            span.innerHTML = jsonObj.intro.content;
+                span.innerHTML = jsonObj.intro.content;
 
             mainTitle.innerHTML = jsonObj.title.main;
             subTitle.innerHTML = jsonObj.title.sub;
-            introContent[0].appendChild(introLead);
             introContent[0].appendChild(span);
             introContent[1].innerHTML = jsonObj.intro.en_content;
         }
+        // Home Page
         dataLoad({
             title: {
                 main: '翼灵物联工作室',
@@ -30,7 +40,24 @@ $(document).ready(function() {
                 content: ' - 一支追求技术、开放、自由的大学生团队。',
                 en_content: 'YiLing-ers pursue technology, openness and freedom.'
             }
-        });
+        }, 0);
+        // Persue Page
+        dataLoad({
+            title: {
+                main: '培养方向',
+                sub: 'The technology we pursue',
+            },
+            intro: {
+                content: '以嵌入式开发为特色，云端、移动端、PC 端协同开发',
+                en_content: 'YiLing-ers develop Embedded specially, coordinating Cloud, Mobile and Client as well.',
+                imgs: [
+                    '../static/img/sc-data-128.png',
+                    '../static/img/cdp-data-128.png',
+                    '../static/img/android-128.png',
+                    '../static/img/code-fe-128.png'
+                ]
+            }
+        }, 1);
     })();
 });
 
