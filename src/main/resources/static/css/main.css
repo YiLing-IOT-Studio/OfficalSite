@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 .header,
 .footer {
     position: fixed;
@@ -57,6 +56,7 @@
 .footer a {
     color: #666;
 }
+
 .footer a:hover {
     color: #222;
 }
@@ -74,6 +74,7 @@
     color: #222;
 }
 
+
 /*****************************/
 
 .section {
@@ -88,6 +89,7 @@
     transform: translateX(-50%);
     z-index: 999;
 }
+
 .absolute-center {
     position: absolute;
     top: 40%;
@@ -181,12 +183,15 @@
     height: 2px;
     background-color: transparent;
 }
+
 .line-top {
     top: 5px;
 }
+
 .line-bottom {
     bottom: 5px;
 }
+
 
 /*.nav-item:hover .line {
     background-color: #666;
@@ -195,3 +200,20 @@
 .btn-group {
     margin: 20px 0;
 }
+
+
+/* .lazy_js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 200px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.lazy_js::after {
+    content: '正在加载中...';
+} */
