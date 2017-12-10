@@ -512,8 +512,29 @@ p {
 }
 
 .tile-con.tile-main .tile-item {
+    position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.slide-img.img2 {
+    top: 320px;
+}
+
+.slide-img.img3 {
+    top: 640px;
+}
+
+.slide-img.img4 {
+    top: 960px;
 }
 
 .tile-date {

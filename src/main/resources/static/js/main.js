@@ -430,3 +430,12 @@ Issues: http://github.com/ariona/hover3d/issues
 //     };
 
 // }(jQuery));
+
+$(document).ready(function() {
+    var tileMainCon = document.getElementsByClassName('tile-main')[0];
+    var slideImgs = tileMainCon.getElementsByClassName('slide-img');
+    console.log(slideImgs);
+    for (var i = 0, len = slideImgs; i < len; i++) {
+        slideImgs[i].style.top = i * 320 + 'px';
+    }
+});
