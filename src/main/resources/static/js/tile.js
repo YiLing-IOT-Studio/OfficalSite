@@ -41,6 +41,12 @@ function pageInit() {
         error: function() {
             temp.innerHTML = '天气获取失败...';
         }
-    })
+    });
 
+    var newsCon = document.getElementsByClassName('news-con')[0];
+    var newsContent = '第五届道惟尔杯完满闭幕，第五届道惟尔杯完满闭幕，第五届道惟尔杯完满闭幕';
+    if (newsContent.length > 27) {
+        newsContent = newsContent.substr(0, 27) + '...';
+    }
+    newsCon.innerHTML = newsContent;
 }
