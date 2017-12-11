@@ -235,207 +235,140 @@ $(document).ready(function() {
     $('.yl-time').text(new Date().getFullYear());
 });
 
-// (function($) {
-//     $.fn.borderAnim = function() {
-//         var w = $(this).width();
-//         var h = $(this).height();
-
-//         $(this).hover(function() {
-//             var borderTop = $('<div>').css({
-//                 position: "absolute",
-//                 top: "-2px",
-//                 left: "-2px",
-//                 width: "0",
-//                 height: "2px",
-//                 background: "#ff0000"
-//             }).addClass('divTop');
-//             var borderRight = $('<div>').css({
-//                 position: "absolute",
-//                 bottom: "-2px",
-//                 right: "-2px",
-//                 width: "2px",
-//                 height: "0",
-//                 background: "#ff0000"
-//             }).addClass('divRight');
-//             var borderBottom = $('<div>').css({
-//                 position: "absolute",
-//                 bottom: "-2px",
-//                 right: "-2px",
-//                 width: "0",
-//                 height: "2px",
-//                 background: "#ff0000"
-//             }).addClass('divBottom');
-//             var borderLeft = $('<div>').css({
-//                 position: "absolute",
-//                 top: "-2px",
-//                 left: "-2px",
-//                 width: "2px",
-//                 height: "0",
-//                 background: "#ff0000"
-//             }).addClass('divLeft');
-
-//             $(this).append(borderTop, borderRight, borderBottom, borderLeft);
-
-//             $(this).find('div:nth-child(odd)').stop().animate({ width: w + 3.5 }, 300);
-//             $(this).find('div:nth-child(even)').stop().animate({ height: h + 3.5 }, 300);
-//         }, function() {
-//             $(this).find('div:nth-child(odd)').stop().animate({ width: 0 }, 300);
-//             $(this).find('div:nth-child(even)').stop().animate({ height: 0 }, 300, function() {
-//                 $(".card .divTop,.card .divRight,.card .divBottom,.card .divLeft").remove()
-//             });
-//         });
-//     }
-// })(jQuery);
-
-// $('.card').borderAnim();
-
-
-
-
-// $(document).ready(function() {
-//     var lazy = document.getElementsByClassName('lazy_js')[0];
-//     lazy.classList = '';
-//     console.log(lazy);
-// });
-
-// var lazy = document.getElementsByClassName('lazy_js')[0];
-// $('.lazy_js').remove('.lazy_js');
-// console.log(lazy);
-// console.log(1);
-
-/*
-jQuery Hover3d
-=================================================
-Version: 1.0.0
-Author: Rian Ariona
-Website: http://ariona.net
-Docs: http://ariona.github.io/hover3d
-Repo: http://github.com/ariona/hover3d
-Issues: http://github.com/ariona/hover3d/issues
-*/
-
-// (function($) {
-
-//     $.fn.hover3d = function(options) {
-
-//         var settings = $.extend({
-//             selector: null,
-//             perspective: 1000,
-//             sensitivity: 20,
-//             invert: false,
-//             shine: false,
-//             hoverInClass: "hover-in",
-//             hoverOutClass: "hover-out"
-//         }, options);
-
-//         return this.each(function() {
-
-//             var $this = $(this),
-//                 $card = $this.find(settings.selector);
-
-//             if (settings.shine) {
-//                 $card.append('<div class="shine"></div>');
-//             }
-//             var $shine = $(this).find(".shine");
-
-//             // Set perspective and transformStyle value
-//             // for element and 3d object	
-//             $this.css({
-//                 perspective: settings.perspective + "px",
-//                 transformStyle: "preserve-3d"
-//             });
-
-//             $card.css({
-//                 perspective: settings.perspective + "px",
-//                 transformStyle: "preserve-3d",
-//             });
-
-//             $shine.css({
-//                 position: "absolute",
-//                 top: 0,
-//                 left: 0,
-//                 bottom: 0,
-//                 right: 0,
-//                 "z-index": 9
-//             });
-
-//             // Mouse Enter function, this will add hover-in
-//             // Class so when mouse over it will add transition
-//             // based on hover-in class
-//             function enter() {
-//                 $card.addClass(settings.hoverInClass);
-
-//                 setTimeout(function() {
-//                     $card.removeClass(settings.hoverInClass);
-//                 }, 1000);
-//             }
-
-//             // Mouse movement Parallax effect
-//             function move(event) {
-//                 var w = $this.innerWidth(),
-//                     h = $this.innerHeight(),
-//                     ax = settings.invert ? (w / 2 - event.offsetX) / settings.sensitivity : -(w / 2 - event.offsetX) / settings.sensitivity,
-//                     ay = settings.invert ? -(h / 2 - event.offsetY) / settings.sensitivity : (h / 2 - event.offsetY) / settings.sensitivity;
-//                 dy = event.offsetY - h / 2,
-//                     dx = event.offsetX - w / 2,
-//                     theta = Math.atan2(dy, dx),
-//                     angle = theta * 180 / Math.PI - 90;
-
-//                 if (angle < 0) {
-//                     angle = angle + 360;
-//                 }
-
-
-//                 $card.css({
-//                     perspective: settings.perspective + "px",
-//                     transformStyle: "preserve-3d",
-//                     transform: "rotateY(" + ax + "deg) rotateX(" + ay + "deg)"
-//                 });
-
-//                 $shine.css('background', 'linear-gradient(' + angle + 'deg, rgba(255,255,255,' + event.offsetY / h * .5 + ') 0%,rgba(255,255,255,0) 80%)');
-//             }
-
-//             // Mouse leave function, will set the transform
-//             // property to 0, and add transition class
-//             // for exit animation
-//             function leave() {
-//                 $card.addClass(settings.hoverOutClass);
-//                 $card.css({
-//                     perspective: settings.perspective + "px",
-//                     transformStyle: "preserve-3d",
-//                     transform: "rotateX(0) rotateY(0)"
-//                 });
-//                 setTimeout(function() {
-//                     $card.removeClass(settings.hoverOutClass);
-//                 }, 1000);
-//             }
-
-//             // Mouseenter event binding
-//             $this.on("mouseenter", function() {
-//                 return enter();
-//             });
-
-//             // Mousemove event binding
-//             $this.on("mousemove", function(event) {
-//                 return move(event);
-//             });
-
-//             // Mouseleave event binding
-//             $this.on("mouseleave", function() {
-//                 return leave();
-//             });
-
-//         });
-
-//     };
-
-// }(jQuery));
-
 $(document).ready(function() {
-    var tileMainCon = document.getElementsByClassName('tile-main')[0];
-    var slideImgs = tileMainCon.getElementsByClassName('slide-img');
-    console.log(slideImgs);
-    for (var i = 0, len = slideImgs; i < len; i++) {
-        slideImgs[i].style.top = i * 320 + 'px';
+    function anim() {
+        move('.swiper-img.img1')
+            .set('top', '0px')
+            .duration('2s')
+            .delay('2s')
+            .end(function() {
+                move('.swiper-img.img1')
+                    .set('top', '-318px')
+                    .duration('2s')
+                    .delay('2s')
+                    .end();
+                move('.swiper-img.img2')
+                    .set('top', '0px')
+                    .duration('2s')
+                    .delay('2s')
+                    .end(function() {
+                        move('.swiper-img.img2')
+                            .set('top', '-318px')
+                            .duration('2s')
+                            .delay('2s')
+                            .end();
+                        move('.swiper-img.img3')
+                            .set('top', '0px')
+                            .duration('2s')
+                            .delay('2s')
+                            .end(function() {
+                                move('.swiper-img.img3')
+                                    .set('top', '-318px')
+                                    .duration('2s')
+                                    .delay('2s')
+                                    .end();
+                                move('.swiper-img.img4')
+                                    .set('top', '0px')
+                                    .duration('2s')
+                                    .delay('2s')
+                                    .end(function() {
+                                        move('.swiper-img.img4')
+                                            .set('top', '318px')
+                                            .duration('2s')
+                                            .delay('2s')
+                                            .end();
+                                        move('.swiper-img.img3')
+                                            .set('top', '0px')
+                                            .duration('2s')
+                                            .delay('2s')
+                                            .end(function() {
+                                                move('.swiper-img.img3')
+                                                    .set('top', '318px')
+                                                    .duration('2s')
+                                                    .delay('2s')
+                                                    .end();
+                                                move('.swiper-img.img2')
+                                                    .set('top', '0px')
+                                                    .duration('2s')
+                                                    .delay('2s')
+                                                    .end(function() {
+                                                        move('.swiper-img.img2')
+                                                            .set('top', '318px')
+                                                            .duration('2s')
+                                                            .delay('2s')
+                                                            .end();
+                                                        move('.swiper-img.img1')
+                                                            .set('top', '0px')
+                                                            .duration('2s')
+                                                            .delay('2s')
+                                                            .end();
+                                                    })
+                                            })
+                                    })
+                            })
+                    });
+            });
     }
+    var timer = null;
+    timer = setInterval(anim(), 2000);
+
+    (function() {
+        var timer = null;
+        var randomNum;
+
+        var tileCon = document.getElementsByClassName('tile-con')[2];
+        var tileItems = tileCon.getElementsByClassName('tile-item');
+        var tileItemsLen = tileItems.length;
+
+        function randomAnimation() {
+            randomNum = parseInt(Math.random() * 8);
+            console.log(randomNum);
+
+            switch (randomNum) {
+                case 0:
+                    console.log('item0');
+
+                    break;
+                case 1:
+                    console.log('item1');
+                    break;
+                case 2:
+                    console.log('item2');
+                    break;
+                case 3:
+                    console.log('item3');
+                    break;
+                case 4:
+                    console.log('item4');
+                    break;
+                case 5:
+                    console.log('item5');
+                    break;
+                case 6:
+                    console.log('item6');
+                    break;
+                case 7:
+                    console.log('item7');
+                    break;
+                default:
+                    console.log('default animation');
+                    break;
+            }
+
+        }
+
+        timer = setInterval(randomAnimation, 500);
+
+        for (var i = 0; i < tileItemsLen; i++) {
+            (function(i) {
+                EventUtil.addHandler(tileItems[i], 'mouseover', function() {
+                    clearInterval(timer);
+                });
+                EventUtil.addHandler(tileItems[i], 'mouseout', function() {
+                    timer = setInterval(randomAnimation, 500);
+                });
+            }(i));
+        }
+    })();
+
 });

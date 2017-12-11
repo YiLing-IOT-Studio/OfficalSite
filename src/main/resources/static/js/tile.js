@@ -12,4 +12,23 @@ function pageInit() {
     day.innerHTML = now.getDate();
 
     var tileWeather = document.getElementsByClassName('tile-weather')[0];
+    var weather = document.getElementsByClassName('weather')[0];
+    var temp = document.getElementsByClassName('temp')[0];
+    var tempCur = document.getElementsByClassName('temp-cur')[0];
+    var tempMax = document.getElementsByClassName('temp-max')[0];
+    var tempMin = document.getElementsByClassName('temp-min')[0];
+    var city = document.getElementsByClassName('city')[0];
+
+    $.ajax({
+        type: 'GET',
+        url: '/weatherInfo',
+        dataType: 'json',
+        success: function(data) {
+            console.log(data);
+        },
+        error: function() {
+            temp.innerHTML = '天气获取失败...';
+        }
+    })
+
 }
