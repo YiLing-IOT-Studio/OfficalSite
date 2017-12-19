@@ -89,6 +89,7 @@
                 <span>鼠标上下滚动</span>
             </section>
         </div>
+        <!-- page two -->
         <div class="section openpage">
             <section class="sec-header secpage">
                 <h2 class="h2">· Welcome ·</h2>
@@ -152,6 +153,7 @@
                         </div>
                         <div class="tile-item">
                             <span class="sticker">荣誉</span>
+                            <img src="../static/img/glory/ji-suan-ji-she-ji-da-sai-yi-deng-jiang-200x200.jpg" alt="ji-suan-ji-she-ji-da-sai-yi-deng-jiang" />
                         </div>
                         <div class="tile-item">
                             <span class="sticker">嵌入式</span>
@@ -171,6 +173,7 @@
                         </div>
                         <div class="tile-item">
                             <span class="sticker">项目</span>
+                            <img src="../static/img/project/xun-che-xi-tong-200x200.jpg" alt="xun-che-xi-tong" />
                         </div>
                     </div>
                 </div>
@@ -357,41 +360,40 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <figure class="text-center">
-                        <img src="../static/img/w3fun-100x100.png" />
-                        <figcaption class="h5">登录翼灵</figcaption>
+                        <img src="../static/img/nav-official-48.png" />
+                        <figcaption class="h6">登录翼灵</figcaption>
                     </figure>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form id="signInForm" role="form">
                         <div class="form-group">
-                            <label for="username" class="form-control-label">账号</label>
-                            <input type="text" id="username" name="username" class="form-control" placeholder="请输入账号" />
+                            <label for="username" class="form-control-label">用户名</label>
+                            <input type="text" id="username" name="username" class="form-control form-control-sm" placeholder="Please type your username as a YL-er" />
                         </div>
                         <div class="form-group">
                             <label for="password" class="form-control-label">密码</label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="请输入密码" maxlength="16" />
-                            <div class="alert alert-danger" role="alert">
-                                <strong>Error! </strong> <span></span>
+                            <input type="password" name="password" id="password" class="form-control form-control-sm" placeholder="Please type your password" maxlength="16" />
+                            <div class="psw-eye" id="pswEye">
+                                <i class="fa fa-eye-slash" style="color: #666;"></i>
                             </div>
-                            <i class="fa fa-eye-slash" style="color: #666;"></i>
                         </div>
                         <div class="form-group text-right">
                             <input type="checkbox" id="memId" />
                             <label for="memId">记住我</label>
                         </div>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-lg btn-primary btn-block" id="inSubmitButton">登 录</button>
+                            <button type="submit" class="btn btn-lg btn-primary btn-sm btn-block" id="inSubmitButton">登 录</button>
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
+                <!-- <div class="modal-footer">
                     <div class="find-psd">
                         忘记密码?&nbsp;&nbsp;<a href="findPsd.html" target="_blank">去找回</a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

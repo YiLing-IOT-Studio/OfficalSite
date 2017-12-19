@@ -696,3 +696,54 @@ p {
         transform: perspective(400px) rotatex(360deg);
     }
 } */
+
+
+/* 
+********** sign in modal ************
+*/
+
+.modal {
+    font-size: 12px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-control {
+    font-size: 12px;
+}
+
+.modal .btn {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.psw-eye {
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.modal-header {
+    position: relative;
+    height: 120px;
+}
+
+.modal-header figure {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-header figcaption {
+    margin-top: 15px;
+}

@@ -371,4 +371,101 @@ $(document).ready(function() {
         }
     })();
 
+    (function() {
+        $('#username').blur(function(){
+            var username = $('#username').val();
+            if (username){
+                $.ajax({
+                    type: 'POST',
+                    url: '/',
+                    dataType: 'json',
+                    data: {
+                        'username': username
+                    },
+                    success: function(data){
+                        console.log(data);
+                        if (parseInt(data)){
+                            $('.form-group:first-child').addClass('has-success');
+                            $('#username').addClass('form-control-success');
+                        } else {
+                            $('.form-group:first-child').addClass('has-error');
+                            $('#username').addClass('form-control-error');
+                        }
+                    },
+                    error: function(error){
+                        console.log(error);
+                    }
+                });
+            }
+        });
+        $('#username').focus(function(){
+            if ($(this).hasClass('form-control-success')){
+                $(this).removeClass('form-control-success');
+                $(this).parent().remove('has-success');
+            } else {
+                $(this).removeClass('form-control-error');
+                $(this).parent().remove('has-error');
+            }
+        });
+        $('#password').blur(function(){
+            var password = $('#password').val();
+            var username = $('#username').val();
+            if (password.length >=6 && password.length <= 16) {
+                $('.form-group:nth-child(2)').addClass('has-success');
+                $('#password').addClass('form-control-success');
+            } else {
+                $('.form-group:nth-child(2)').addClass('has-error');
+                $('#password').addClass('form-control-error');
+            }
+        });
+        $('#password').focus(function(){
+            if ($(this).hasClass('form-control-success')){
+                $(this).removeClass('form-control-success');
+                $(this).parent().remove('has-success');
+            } else {
+                $(this).removeClass('form-control-error');
+                $(this).parent().remove('has-error');
+            }
+        });
+        $('#pswEye').mousedown(function(){
+            $('#pswEye i').removeClass('fa-eye-slash').addClass('fa-eye');
+            $('#password').attr('type', 'text');
+        });
+        $('#pswEye').mouseup(function(){
+            $('#pswEye i').removeClass('fa-eye').addClass('fa-eye-slash');
+            $('#password').attr('type', 'password');
+        });
+        $('#submitBtn').click(function(event){
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '',
+                dataType: 'json',
+                data: {
+                    'username': $('#username').val(),
+                    'password': $('#password').val()
+                },
+                success: function(){
+                    console.log('login success');
+                },
+                error: function(){
+                    console.log('login error');
+                }
+            });
+        });
+        if (!window.localStorage){
+            alert('您的浏览器版本过低！');
+        } else {
+            var storage = window.localStorage;
+        }
+        $('#memId').click(function(){
+            if ($(this).isChecked()){
+                storage.setItem('username', $('#username').val());
+                storage.setItem('password', $('#password').val());
+            } else {
+                // ...
+            }
+        });
+    })();
+
 });
