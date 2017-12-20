@@ -1,6 +1,6 @@
 package com.iot.service;
 
-import com.iot.dao.MemberDao;
+import com.iot.repository.MemberRepository;
 import com.iot.entity.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,12 +13,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 public class MemberService implements UserDetailsService {
 
     @Autowired
-    MemberDao memberDao;
+    MemberRepository memberRepository;
 
     @Override
     public UserDetails loadUserByUsername(String name) {
 
-        Member member = memberDao.findByUsername(name);
+        Member member = memberRepository.findByUsername(name);
         if (member == null) {
             throw new UsernameNotFoundException("用户名不存在");
         }

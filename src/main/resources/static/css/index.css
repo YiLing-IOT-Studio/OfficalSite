@@ -1,0 +1,509 @@
+@charset "utf-8";
+
+body {
+    padding-top: 2em;
+    background-color: rgba(255, 243, 244, 0.49);
+    color: #333;
+    font-size: 16px;
+    min-width:1024px;
+}
+nav{
+    background-color:lightseagreen;
+}
+.container{
+    margin-top:25px;
+    margin-bottom:30px;
+
+}
+main {
+    padding-top: 60px;
+}
+#footer{
+    padding:10px;
+    background-color:lightblue;
+}
+ul{
+    list-style-type: none;
+}
+input[type='radio']{
+    margin-right:5px;
+}
+.text{
+    text-indent: 2em;
+}
+.background-gray-dark{
+    background-color: #cccccc;
+}
+.background-light-blue{
+    background-color:lightblue;
+}
+a{
+    color:darkgoldenrod;
+    font-size:14px;
+}
+.radio-inline{
+    padding-right:35px;
+}
+.form-group{
+    padding:10px;
+}
+.item{
+    display:none;
+}
+.website-link {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    margin: 18px;
+}
+
+.website-item {
+    width: 36px;
+    height: 36px;
+}
+
+.website-info {
+    margin-top: 10px;
+    font-size: 12px;
+}
+.git-img{
+    display: inline-block;
+    width: 1em;
+}
+/*photo-album*/
+.polaroid {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 10px 20px 10px;
+    width: 150px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    z-index: 2;
+    font-size: 0.7em;
+    -webkit-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+    -moz-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+    box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+    -webkit-transition: all 0.5s ease-in;
+}
+img.polaroid:hover,
+img.polaroid:focus,
+img.polaroid:active {
+    z-index: 999;
+    border-color: #6A6A6A;
+    -webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+    -moz-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+    box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+    -webkit-transform: rotate(0deg) scale(1.05);
+    -moz-transform: rotate(0deg) scale(1.05);
+    transform: rotate(0deg) scale(1.05);
+}
+.polaroid img {
+    margin: 0 0 15px;
+    width: 150px;
+    height: 150px;
+}
+
+img {
+    border: none;
+    display: block;
+}
+
+.photo-album {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 70em;
+    height: 450px;
+    margin-top: 7em;
+    min-width: 800px;
+    max-width: 900px;
+}
+.photo-album .polaroid {
+    position: absolute;
+}
+.photo-album h1 {
+    position: absolute;
+    z-index: 5;
+    top: 150px;
+    text-align: center;
+    width: 100%;
+    line-height: 1.9;
+}
+.photo-album h1 span{
+    background-color: white;
+    font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+    padding: 0.4em 0.4em 0.3em 0.4em;
+    -webkit-box-shadow: 4px 4px 8px rgba(0,0, 0, 0.3);
+    -moz-box-shadow: 4px 4px 8px rgba(0,0, 0, 0.3);
+    box-shadow: 4px 4px 8px rgba(0,0, 0, 0.3);
+    border: 1px solid #6A6A6A;
+    font-size: 1.3em;
+}
+.photo-album .small {
+    width: 75px;
+    padding: 6px 6px 12px 6px;
+    font-size: 0.6em;
+}
+.photo-album .small{
+    width: 75px;
+    /*height: 75px;*/
+}
+.photo-album .medium {
+    width: 200px;
+    padding: 13px 13px 26px 13px;
+    font-size: 0.8em;
+}
+.photo-album .medium{
+    width: 200px;
+    /*height: 200px;*/
+}
+.photo-album .large {
+    width: 300px;
+    padding: 20px 20px 30px 20px;
+    font-size: 1em;
+}
+.photo-album .large{
+    width: 300px;
+    /*height: 300px;*/
+}
+.photo-album .img1{
+    bottom: 10px;
+    right: 365px;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
+.photo-album .img2 {
+    top: 100px;
+    left: 20px;
+    /*-webkit-transform: rotate(-4deg);*/
+    /*-moz-transform: rotate(-4deg);*/
+    /*transform: rotate(-4deg);*/
+}
+.photo-album .img3 {
+    left: 400px;
+    top: 0;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+.photo-album .img4 {
+    top: 10px;
+    left: 495px;
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+}
+.photo-album .img5 {
+    bottom: 0;
+    right: 0;
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    transform: rotate(1deg);
+}
+.photo-album .img6 {
+    bottom: 10px;
+    right: 156px;
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    transform: rotate(6deg);
+}
+.photo-album .img7 {
+    bottom:0;
+    left:400px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+.photo-album .img8 {
+    bottom: 150px;
+    left: 700px;
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    transform: rotate(-8deg);
+}
+.photo-album .img9 {
+    bottom: 0;
+    left: 0;
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    transform: rotate(-8deg);
+}
+.photo-album .img10 {
+    top: 0;
+    left: 20px;
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    transform: rotate(8deg);
+}
+.photo-album .img11 {
+    top: 0;
+    right: 0;
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    transform: rotate(-8deg);
+}
+.photo-album .img12 {
+    top: 0;
+    left: 680px;
+    -webkit-transform: rotate(18deg);
+    -moz-transform: rotate(18deg);
+    transform: rotate(18deg);
+}
+.photo-album .img13 {
+    bottom: -20px;
+    right: 630px;
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    transform: rotate(4deg);
+}
+.photo-album .img14 {
+    top: 90px;
+    left: 430px;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+.photo-album .img15 {
+    left:176px;
+    top:20px;
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    transform: rotate(-8deg);
+}
+.photo-album .img16 {
+    left:60px;
+    top:150px;
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    transform: rotate(8deg);
+}
+.photo-album .img17 {
+    left:350px;
+    top:150px;
+    -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+.photo-album .img18 {
+    left:300px;
+    top:50px;
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    transform: rotate(8deg);
+}
+.photo-album .img19 {
+    left:600px;
+    top:100px;
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    transform: rotate(8deg);
+}
+.photo-album .img20 {
+    bottom:60px;
+    right:140px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+
+.photo-album img:hover,
+.photo-album img:focus {
+    z-index: 5;
+}
+/*content*/
+/*item display*/
+.header{
+    /*font-family:"Lucida handwriting", "Snell Roundhand", "Helvetica Neue",Arial,Helvetica,sans-serif;*/
+    margin-top: 6em;
+    margin-bottom: 3em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    background: url("http://p0f7xvqqj.bkt.clouddn.com/border-bg.png") no-repeat center bottom;
+}
+.header p{
+    font-family:"Lucida handwriting", "Snell Roundhand", "Helvetica Neue",Arial,Helvetica,sans-serif;
+}
+.item-display{
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 3em;
+}
+.item-imgs-odd{
+    /*width: 40%;*/
+    padding: 2.5em 4em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.item-introduce-odd{
+    padding: 1em 2em;
+    /*width: 38%;*/
+    position: absolute;
+    right:0;
+    top: 0;
+    /*margin-bottom: 3em;*/
+}
+.item-introduce h3{
+    font-size: 1.2em;
+}
+.item-introduce span,.item-introduce p{
+    font-size: 0.8em;
+    color: #6e6e6e;
+}
+.item-introduce p{
+    margin-top: 0.5em;
+    /*margin-bottom:0.5em;*/
+    text-indent: 2em;
+}
+.item-display .rotate{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.item-imgs-even{
+    /*width: 40%;*/
+    padding: 2.5em 4em;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.item-introduce-even{
+    padding: 1em 3em;
+    /*width: 38%;*/
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /*margin-bottom: 3em;*/
+}
+/*glory display*/
+.glory-wall{
+    padding: 1em;
+    border: 3px dashed #d3cbc4;
+    background-color: white;
+    margin-bottom: 3em;
+}
+.glory-wall h3{
+    font-size: 1.2em;
+}
+.glory-wall span,.glory-wall p{
+    font-size: 0.8em;
+    color: #6e6e6e;
+}
+.glory-wall p{
+    text-indent: 2em;
+}
+.glory-left,.glory-right{
+    padding: 2em;
+}
+/*github*/
+.github-link{
+    margin-bottom: 8em;
+    /*padding:0 1em;*/
+}
+.github-link img{
+    width: 100%;
+}
+.github-link .col-7{
+    padding-top: 2px;
+}
+.github-link .col-4{
+    text-indent:2em;
+    padding-top:0.5em;
+    margin-left: 2em;
+    text-align: justify;
+    font-size: 0.8em;
+}
+.github-link .pull-right a{
+    font-size: 1.2em;
+}
+/*mask*/
+.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index:9;
+}
+.span{
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    left:0;
+    right: 0;
+    top:150px;
+    font-family: "Lucida Console",'微软雅黑';
+    z-index: 10;
+}
+.add{
+    height: 366px;
+    border: 3px dashed #d3cbc4;
+    text-align: center;
+    padding: 6em;
+}
+/*addmessage*/
+.addMsg{
+    border: none;
+    width: 100px;
+    height:100px;
+    background: url("http://p0f7xvqqj.bkt.clouddn.com/add.png") no-repeat center;
+    cursor: pointer;
+}
+.modal-body textarea{
+    resize: none;
+}
+form p{
+    float:left;
+    clear:both;
+    margin:5px 0;
+    background-color:#f4f4f4;
+    border:1px solid #fff;
+    width:470px;
+    padding:4px;
+    /*margin-left:100px;*/
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow:0px 0px 3px #aaa;
+    -webkit-box-shadow:0px 0px 3px #aaa;
+    box-shadow:0px 0px 3px #aaa;
+}
+form p label{
+    width:130px;
+    float:left;
+    text-align:right;
+    margin-right:15px;
+    line-height:26px;
+    color:#666;
+    text-shadow:1px 1px 1px #fff;
+    font-weight:bold;
+}
+form input:not([type=radio]),
+form textarea,
+form select{
+    background: #ffffff;
+    border: 1px solid #ddd;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
+    width: 250px;
+    float:left;
+}
+
+/*ajax删除*/
+.delete{
+    border: none;
+    width: 30px;
+    height:32px;
+    background: url("http://p0f7xvqqj.bkt.clouddn.com/delete.png") no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+    position: absolute;
+    right:30px;
+    top:0;
+}
