@@ -44,22 +44,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        //http
-            //    .headers().frameOptions().sameOrigin()
-           //     .and().authorizeRequests()
-                //.antMatchers("/*.html").permitAll()
-           //     .anyRequest().authenticated()
-           //     .and().formLogin().loginPage("/login").failureUrl("/login?error").permitAll()
-                //.and().sessionManagement().invalidSessionUrl("/")
-                //.and().logout().deleteCookies("JSESSIONID")
-                //.and().rememberMe().key("remember-me").rememberMeParameter("remember-me").tokenValiditySeconds(1209600)
-            //    .and().logout().permitAll();
         http.authorizeRequests()
                 .antMatchers("/*.html").permitAll()
                 .and().formLogin().loginPage("/login").defaultSuccessUrl("/index",true).failureUrl("/login?error").permitAll()
-                .and()
-                .logout()
-                .permitAll();
+                .and().sessionManagement().invalidSessionUrl("/")
+                .and().logout().deleteCookies("JSESSIONID")
+                //.and().rememberMe().key("remember-me").rememberMeParameter("remember-me").tokenValiditySeconds(1209600)
+                .and().logout().logoutSuccessUrl("/").permitAll();
 
         http.csrf().disable();
     }
