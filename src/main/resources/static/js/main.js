@@ -318,6 +318,7 @@ $(document).ready(function() {
 
         var tileCon = document.getElementsByClassName('tile-con')[2];
         var tileItems = tileCon.getElementsByClassName('tile-item');
+        var tileImgs = tileCon.getElementsByClassName('tile-img');
         var tileItemsLen = tileItems.length;
 
         function randomAnimation() {
@@ -327,54 +328,132 @@ $(document).ready(function() {
             switch (randomNum) {
                 case 0:
                     console.log('item0');
-
+                    rotateAnim(randomNum);
                     break;
                 case 1:
                     console.log('item1');
+                    rotateAnim(randomNum);
                     break;
                 case 2:
                     console.log('item2');
+                    rotateAnim(randomNum);
                     break;
                 case 3:
                     console.log('item3');
+                    rotateAnim(randomNum);
                     break;
                 case 4:
                     console.log('item4');
+                    // rotateAnim(randomNum);
                     break;
                 case 5:
                     console.log('item5');
+                    rotateAnim(randomNum);
                     break;
                 case 6:
                     console.log('item6');
+                    rotateAnim(randomNum);
                     break;
                 case 7:
                     console.log('item7');
+                    rotateAnim(randomNum);
                     break;
                 default:
                     console.log('default animation');
+                    rotateAnim(randomNum);
                     break;
             }
 
         }
 
-        timer = setInterval(randomAnimation, 500);
+        timer = setInterval(randomAnimation, 5000);
 
         for (var i = 0; i < tileItemsLen; i++) {
             (function(i) {
+                tileItems[i].flag = true;
+                tileItems[i].imgFlag1 = true;
+                tileItems[i].imgFlag2 = true;
                 EventUtil.addHandler(tileItems[i], 'mouseover', function() {
                     clearInterval(timer);
                 });
                 EventUtil.addHandler(tileItems[i], 'mouseout', function() {
-                    timer = setInterval(randomAnimation, 500);
+                    timer = setInterval(randomAnimation, 5000);
                 });
             }(i));
+        }
+
+        tileItems[0].imgs = [
+            ['../static/img/frontend/fe_liyoubo_200x200.jpg', '../static/img/frontend/fe_liwenfei_200x200.jpg'],
+            ['../static/img/frontend/fe_zhoudeng.jpg', '../static/img/frontend/fe_caoxuemei_200x200.jpg']
+        ];
+        tileItems[1].imgs = [
+            ['../static/img/backend/be_xiongxiaoyu_200x200.jpg', '../static/img/backend/be_jinglili_200x200.jpg'],
+            ['../static/img/backend/be_wangping_200x200.jpg', '../static/img/backend/be_zhanghaiyang_200x200.jpg']
+        ];
+        tileItems[2].imgs = [
+            ['../static/img/glory/ji-suan-ji-she-ji-da-sai-yi-deng-jiang-200x200.jpg', '../static/img/glory/wu-lian-wang-she-ji-jing-sai-200x200.jpg'],
+            ['../static/img/glory/wu-lian-wang-she-ji-jing-sai-2-200x200.jpg', '../static/img/glory/wu-lian-wang-she-ji-jing-sai-3-200x200.jpg']
+        ];
+        tileItems[3].imgs = [
+            ['../static/img/embedded/em_yigangxi_200x200.jpg', '../static/img/embedded/em-chengmiaohong-200x200.jpg'],
+            ['../static/img/embedded/em_jifengtao_200x200.jpg', '../static/img/embedded/em_duyu_200x200.jpg']
+        ];
+        tileItems[5].imgs = [
+            ['../static/img/android/an_tangguangsheng_200x200.jpg', '../static/img/android/an_zengxinrui_200x200.jpg'],
+            ['../static/img/android/an_songqifei_200x200.jpg', '../static/img/android/an_duzeming_200x200.jpg']
+        ];
+        tileItems[6].imgs = [
+            ['../static/img/newMembers/new_fenglei_200x200.jpg', '../static/img/newMembers/new_xiaoyaqiong_200x200.jpg'],
+            ['../static/img/newMembers/new_xiongcheng_200x200.jpg', '../static/img/newMembers/new_pengzhen_200x200.jpg']
+        ];
+        tileItems[7].imgs = [
+            ['../static/img/project/xun-che-xi-tong-200x200.jpg', '../static/img/project/zhi-neng-an-quan-xie-200x200.jpg'],
+            ['../static/img/project/wei-xin-xiao-cheng-xu-200x200.jpg', '../static/img/project/zhi-neng-xiao-che-200x200.jpg']
+        ]
+
+        function rotateAnim(index) {
+            var tileItem = tileItems[index];
+            console.log(tileItem);
+            var tileItemCon = tileItem.getElementsByClassName('tile-item-content')[0];
+            console.log(tileItemCon);
+            var tileImg = tileItemCon.getElementsByTagName('img');
+            console.log(tileImg);
+
+            function rotate3d() {
+                tileItemCon.style.transform = 'rotateX(90deg)';
+            }
+
+            function rotate3dReverse() {
+                tileItemCon.style.transform = 'rotateX(0deg)';
+            }
+            if (tileItem.flag) {
+                if (tileItem.imgFlag1) {
+                    tileImg[1].src = tileItem.imgs[1][0];
+                    tileItem.imgFlag1 = false;
+                } else {
+                    tileImg[1].src = tileItem.imgs[1][1];
+                    tileItem.imgFlag1 = true;
+                }
+                rotate3d();
+                tileItem.flag = false;
+            } else {
+                if (tileItem.imgFlag2) {
+                    tileImg[0].src = tileItem.imgs[0][0];
+                    tileItem.imgFlag2 = false;
+                } else {
+                    tileImg[0].src = tileItem.imgs[0][1];
+                    tileItem.imgFlag2 = true;
+                }
+                rotate3dReverse();
+                tileItem.flag = true;
+            }
         }
     })();
 
     (function() {
-        $('#username').blur(function(){
+        $('#username').blur(function() {
             var username = $('#username').val();
-            if (username){
+            if (username) {
                 $.ajax({
                     type: 'POST',
                     url: '/',
@@ -382,9 +461,9 @@ $(document).ready(function() {
                     data: {
                         'username': username
                     },
-                    success: function(data){
+                    success: function(data) {
                         console.log(data);
-                        if (parseInt(data)){
+                        if (parseInt(data)) {
                             $('.form-group:first-child').addClass('has-success');
                             $('#username').addClass('form-control-success');
                         } else {
@@ -392,14 +471,14 @@ $(document).ready(function() {
                             $('#username').addClass('form-control-error');
                         }
                     },
-                    error: function(error){
+                    error: function(error) {
                         console.log(error);
                     }
                 });
             }
         });
-        $('#username').focus(function(){
-            if ($(this).hasClass('form-control-success')){
+        $('#username').focus(function() {
+            if ($(this).hasClass('form-control-success')) {
                 $(this).removeClass('form-control-success');
                 $(this).parent().remove('has-success');
             } else {
@@ -407,10 +486,10 @@ $(document).ready(function() {
                 $(this).parent().remove('has-error');
             }
         });
-        $('#password').blur(function(){
+        $('#password').blur(function() {
             var password = $('#password').val();
             var username = $('#username').val();
-            if (password.length >=6 && password.length <= 16) {
+            if (password.length >= 6 && password.length <= 16) {
                 $('.form-group:nth-child(2)').addClass('has-success');
                 $('#password').addClass('form-control-success');
             } else {
@@ -418,8 +497,8 @@ $(document).ready(function() {
                 $('#password').addClass('form-control-error');
             }
         });
-        $('#password').focus(function(){
-            if ($(this).hasClass('form-control-success')){
+        $('#password').focus(function() {
+            if ($(this).hasClass('form-control-success')) {
                 $(this).removeClass('form-control-success');
                 $(this).parent().remove('has-success');
             } else {
@@ -427,15 +506,15 @@ $(document).ready(function() {
                 $(this).parent().remove('has-error');
             }
         });
-        $('#pswEye').mousedown(function(){
+        $('#pswEye').mousedown(function() {
             $('#pswEye i').removeClass('fa-eye-slash').addClass('fa-eye');
             $('#password').attr('type', 'text');
         });
-        $('#pswEye').mouseup(function(){
+        $('#pswEye').mouseup(function() {
             $('#pswEye i').removeClass('fa-eye').addClass('fa-eye-slash');
             $('#password').attr('type', 'password');
         });
-        $('#submitBtn').click(function(event){
+        $('#submitBtn').click(function(event) {
             event.preventDefault();
             $.ajax({
                 type: 'POST',
@@ -445,21 +524,21 @@ $(document).ready(function() {
                     'username': $('#username').val(),
                     'password': $('#password').val()
                 },
-                success: function(){
+                success: function() {
                     console.log('login success');
                 },
-                error: function(){
+                error: function() {
                     console.log('login error');
                 }
             });
         });
-        if (!window.localStorage){
+        if (!window.localStorage) {
             alert('您的浏览器版本过低！');
         } else {
             var storage = window.localStorage;
         }
-        $('#memId').click(function(){
-            if ($(this).isChecked()){
+        $('#memId').click(function() {
+            if ($(this).isChecked()) {
                 storage.setItem('username', $('#username').val());
                 storage.setItem('password', $('#password').val());
             } else {
