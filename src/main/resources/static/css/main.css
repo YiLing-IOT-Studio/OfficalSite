@@ -269,6 +269,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -25%);
+    display: none;
 }
 
 .sec-tip {
@@ -702,3 +703,22 @@ p {
     transform: rotateX(90deg);
     -webkit-transform: rotateX(90deg);
 } */
+
+
+/* bootstrap dialog */
+
+.modal-dialog {
+    margin: 100px auto;
+}
+
+.modal-header {
+    height: 180px;
+}
+
+.btn-logout {
+    position: relative;
+    top: 20px;
+    padding: 5px 15px;
+    font-size: 12px;
+    cursor: pointer;
+}

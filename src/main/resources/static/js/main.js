@@ -61,10 +61,10 @@ $(document).ready(function() {
 
         //Navigation
         lockAnchors: false,
-        anchors: ['index', 'Pursue', 'OpenSource', 'Excellent-ers', 'JoinUs', 'AboutUs'],
+        anchors: ['signin', 'welcome', 'learn', 'ExcellentMan', 'JoinUs', 'AboutUs'],
         navigation: true,
         navigationPosition: 'right',
-        navigationTooltips: ['HomePage', '培养方向', '开源空间', '风云人物', '加入我们', '关于我们'],
+        navigationTooltips: ['signin', 'welcome', 'learn', 'ExcellentMan', 'JoinUs', 'AboutUs'],
         showActiveTooltip: false,
 
         //Scrolling
@@ -123,9 +123,6 @@ $(document).ready(function() {
             if (index === 1) {
                 $('.h2, .h5, .yl-intro, .btn-group').addClass('animated slideInUp');
             }
-            if (index === 6) {
-                $('.yl-location').addClass('animated slideInUp');
-            }
         },
         afterRender: function() {
             (function() {
@@ -169,7 +166,7 @@ $(document).ready(function() {
                 map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
                 map.addOverlay(marker);
                 var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
-                    '<img src="  /img/yiling-building-72.png" alt="" style="float:right;zoom:1;overflow:hidden;width:72px;height:72px;margin-left:3px;"/>' +
+                    '<img src="../static/img/yiling-building-72.png" alt="" style="float:right;zoom:1;overflow:hidden;width:72px;height:72px;margin-left:3px;"/>' +
                     '地址：成都市新都区新都大道8号<br/>电话：17721860879<br/>简介：翼灵物联工作室位于西南石油大学（成都校区）明理楼 C1011' +
                     '</div>';
 
@@ -227,12 +224,25 @@ $(document).ready(function() {
                 }
             }());
         },
-        afterResize: function() {},
-        afterResponsive: function(isResponsive) {},
     });
-});
-$(document).ready(function() {
+    $.fn.fullpage.silentMoveTo('welcome', 1);
+
+
     $('.yl-time').text(new Date().getFullYear());
+
+    $('.nav-item-js').click(function(){
+        var $fa = $('.fa-for-js');
+        if ($fa.hasClass('.fa-caret-right')){
+            $fa.removeClass('.fa-caret-right');
+            $fa.addClass('fa-caret-down');
+        } else {
+            $.removeClass('fa-caret-down');
+            $.addClass('fa-caret-right');
+        }
+        
+    })
+
+
 });
 
 $(document).ready(function() {
@@ -383,32 +393,32 @@ $(document).ready(function() {
         }
 
         tileItems[0].imgs = [
-            ['  /img/frontend/fe_liyoubo_200x200.jpg', '  /img/frontend/fe_liwenfei_200x200.jpg'],
-            ['  /img/frontend/fe_zhoudeng.jpg', '  /img/frontend/fe_caoxuemei_200x200.jpg']
+            ['../static/img/frontend/fe_liyoubo_200x200.jpg', '../static/img/frontend/fe_liwenfei_200x200.jpg'],
+            ['../static/img/frontend/fe_zhoudeng.jpg', '../static/img/frontend/fe_caoxuemei_200x200.jpg']
         ];
         tileItems[1].imgs = [
-            ['  /img/backend/be_xiongxiaoyu_200x200.jpg', '  /img/backend/be_jinglili_200x200.jpg'],
-            ['  /img/backend/be_wangping_200x200.jpg', '  /img/backend/be_zhanghaiyang_200x200.jpg']
+            ['../static/img/backend/be_xiongxiaoyu_200x200.jpg', '../static/img/backend/be_jinglili_200x200.jpg'],
+            ['../static/img/backend/be_wangping_200x200.jpg', '../static/img/backend/be_zhanghaiyang_200x200.jpg']
         ];
         tileItems[2].imgs = [
-            ['  /img/glory/ji-suan-ji-she-ji-da-sai-yi-deng-jiang-200x200.jpg', '  /img/glory/wu-lian-wang-she-ji-jing-sai-200x200.jpg'],
-            ['  /img/glory/wu-lian-wang-she-ji-jing-sai-2-200x200.jpg', '  /img/glory/wu-lian-wang-she-ji-jing-sai-3-200x200.jpg']
+            ['../static/img/glory/ji-suan-ji-she-ji-da-sai-yi-deng-jiang-200x200.jpg', '../static/img/glory/wu-lian-wang-she-ji-jing-sai-200x200.jpg'],
+            ['../static/img/glory/wu-lian-wang-she-ji-jing-sai-2-200x200.jpg', '../static/img/glory/wu-lian-wang-she-ji-jing-sai-3-200x200.jpg']
         ];
         tileItems[3].imgs = [
-            ['  /img/embedded/em_yigangxi_200x200.jpg', '  /img/embedded/em-chengmiaohong-200x200.jpg'],
-            ['  /img/embedded/em_jifengtao_200x200.jpg', '  /img/embedded/em_duyu_200x200.jpg']
+            ['../static/img/embedded/em_yigangxi_200x200.jpg', '../static/img/embedded/em-chengmiaohong-200x200.jpg'],
+            ['../static/img/embedded/em_jifengtao_200x200.jpg', '../static/img/embedded/em_duyu_200x200.jpg']
         ];
         tileItems[5].imgs = [
-            ['  /img/android/an_tangguangsheng_200x200.jpg', '  /img/android/an_zengxinrui_200x200.jpg'],
-            ['  /img/android/an_songqifei_200x200.jpg', '  /img/android/an_duzeming_200x200.jpg']
+            ['../static/img/android/an_tangguangsheng_200x200.jpg', '../static/img/android/an_zengxinrui_200x200.jpg'],
+            ['../static/img/android/an_songqifei_200x200.jpg', '../static/img/android/an_duzeming_200x200.jpg']
         ];
         tileItems[6].imgs = [
-            ['  /img/newMembers/new_fenglei_200x200.jpg', '  /img/newMembers/new_xiaoyaqiong_200x200.jpg'],
-            ['  /img/newMembers/new_xiongcheng_200x200.jpg', '  /img/newMembers/new_pengzhen_200x200.jpg']
+            ['../static/img/newMembers/new_fenglei_200x200.jpg', '../static/img/newMembers/new_xiaoyaqiong_200x200.jpg'],
+            ['../static/img/newMembers/new_xiongcheng_200x200.jpg', '../static/img/newMembers/new_pengzhen_200x200.jpg']
         ];
         tileItems[7].imgs = [
-            ['  /img/project/xun-che-xi-tong-200x200.jpg', '  /img/project/zhi-neng-an-quan-xie-200x200.jpg'],
-            ['  /img/project/wei-xin-xiao-cheng-xu-200x200.jpg', '  /img/project/zhi-neng-xiao-che-200x200.jpg']
+            ['../static/img/project/xun-che-xi-tong-200x200.jpg', '../static/img/project/zhi-neng-an-quan-xie-200x200.jpg'],
+            ['../static/img/project/wei-xin-xiao-cheng-xu-200x200.jpg', '../static/img/project/zhi-neng-xiao-che-200x200.jpg']
         ]
 
         function rotateAnim(index) {
@@ -464,9 +474,9 @@ $(document).ready(function() {
 
             var count = 0;
 
-            var leftImgArr = ['  /img/brand/brand_we_200x200.jpg', '  /img/brand/brand_want_200x200.jpg', '  /img/brand/brand_you_200x200.jpg'];
-            var centerImgArr = ['  /img/brand/brand_want_200x200.jpg', '  /img/brand/brand_you_200x200.jpg', '  /img/brand/brand_we_200x200.jpg'];
-            var rightImgArr = ['  /img/brand/brand_you_200x200.jpg', '  /img/brand/brand_we_200x200.jpg', '  /img/brand/brand_want_200x200.jpg'];
+            var leftImgArr = ['../static/img/brand/brand_we_1_200x200.jpg', '../static/img/brand/brand_we_2_200x200.jpg', '../static/img/brand/brand_we_2_200x200.jpg'];
+            var centerImgArr = ['../static/img/brand/brand_want_2_200x200.jpg', '../static/img/brand/brand_want_1_200x200.jpg', '../static/img/brand/brand_want_3_200x200.jpg'];
+            var rightImgArr = ['../static/img/brand/brand_you_2_200x200.jpg', '../static/img/brand/brand_you_2_200x200.jpg', '../static/img/brand/brand_you_1_200x200.jpg'];
 
             function autoAnim() {
                 if (count >= 3) {
@@ -525,8 +535,8 @@ $(document).ready(function() {
                 $('.form-group:nth-child(2)').addClass('has-success');
                 $('#password').addClass('form-control-success');
             } else {
-                $('.form-group:nth-child(2)').addClass('has-error');
-                $('#password').addClass('form-control-error');
+                $('.form-group:nth-child(2)').addClass('has-warning');
+                $('#password').addClass('form-control-warning');
             }
         });
         $('#password').focus(function() {
@@ -534,17 +544,9 @@ $(document).ready(function() {
                 $(this).removeClass('form-control-success');
                 $(this).parent().remove('has-success');
             } else {
-                $(this).removeClass('form-control-error');
-                $(this).parent().remove('has-error');
+                $(this).removeClass('form-control-warning');
+                $(this).parent().remove('has-warning');
             }
-        });
-        $('#pswEye').mousedown(function() {
-            $('#pswEye i').removeClass('fa-eye-slash').addClass('fa-eye');
-            $('#password').attr('type', 'text');
-        });
-        $('#pswEye').mouseup(function() {
-            $('#pswEye i').removeClass('fa-eye').addClass('fa-eye-slash');
-            $('#password').attr('type', 'password');
         });
         $('#submitBtn').click(function(event) {
             event.preventDefault();
@@ -563,19 +565,6 @@ $(document).ready(function() {
                     console.log('login error');
                 }
             });
-        });
-        if (!window.localStorage) {
-            alert('您的浏览器版本过低！');
-        } else {
-            var storage = window.localStorage;
-        }
-        $('#memId').click(function() {
-            if ($(this).isChecked()) {
-                storage.setItem('username', $('#username').val());
-                storage.setItem('password', $('#password').val());
-            } else {
-                // ...
-            }
         });
     })();
 
