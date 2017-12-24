@@ -1,9 +1,5 @@
 package com.iot.utils;
 
-import com.iot.entity.Weather;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -23,7 +19,7 @@ public class WeatherUtil {
         BufferedReader br = null;
         PrintWriter out = null;
         try {
-            param2 =  URLEncoder.encode(param,"UTF-8");
+            param2 = URLEncoder.encode(param, "UTF-8");
             //接口地址
             String url = "https://free-api.heweather.com/s6/weather?" + param2;
             URL uri = new URL(url);
@@ -39,7 +35,7 @@ public class WeatherUtil {
             out.flush();
             //接收结果
             is = connection.getInputStream();
-            br = new BufferedReader(new InputStreamReader(is));
+            br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
             String line;
             //缓冲逐行读取
             while ((line = br.readLine()) != null) {
@@ -64,28 +60,5 @@ public class WeatherUtil {
         }
 
         return sb.toString();
-    }
-
-    /**
-     * JSON数据解析
-     */
-    public static Weather weatherInfo(String weatherInfobyJson) {
-
-        Weather weather = new Weather();
-        JSONObject weatherObjectOfJson = JSONObject.fromObject(weatherInfobyJson);
-        JSONArray weatherArrayOfJson = weatherObjectOfJson.getJSONArray("HeWeather6");
-        JSONObject weatherInfoObject = weatherArrayOfJson.getJSONObject(0);
-        JSONObject timeWeatherInfo = weatherInfoObject.getJSONObject("now");
-        JSONArray weatherInfoArray = weatherInfoObject.getJSONArray("daily_forecast");//预告天气数组
-        JSONObject nextDayWeather = weatherInfoArray.getJSONObject(1);//第二天的天气预告
-
-        weather.setWeather(timeWeatherInfo.getString("cond_txt"));
-        weather.setTemperature(timeWeatherInfo.getString("tmp"));
-        weather.setWind(timeWeatherInfo.getString("wind_dir"));
-        weather.setNextTemperature(nextDayWeather.getString("tmp_max"));
-        weather.setNextWeather(nextDayWeather.getString("cond_txt_d"));
-        weather.setNextWind(nextDayWeather.getString("wind_dir"));
-
-        return weather;
     }
 }
