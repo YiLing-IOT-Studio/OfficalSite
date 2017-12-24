@@ -38,7 +38,7 @@
                         </li>
                         <li class="nav-item active">
                             <span class="line line-top"></span>
-                            <a class="nav-link" href="#"><i class="fa fa-home"></i>翼灵官网<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="yiling.html#welcome"><i class="fa fa-home"></i>翼灵官网<span class="sr-only">(current)</span></a>
                             <span class="line line-bottom"></span>
                         </li>
                         <li class="nav-item">
@@ -52,7 +52,7 @@
                         </li>
                         <li class="nav-item" sec:authorize="!hasAnyAuthority('ROLE_ADMIN','ROLE_USER')">
                             <span class="line line-top"></span>
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i>个人登录</a>
+                            <a class="nav-link" href="yiling.html#signin"><i class="fa fa-user"></i>个人登录</a>
                             <span class="line line-bottom"></span>
                         </li>
                         <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_USER')">
