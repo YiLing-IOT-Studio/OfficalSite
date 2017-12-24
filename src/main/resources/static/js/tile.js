@@ -44,7 +44,7 @@ function pageInit() {
     });
 
     var newsCon = document.getElementsByClassName('news-con')[0];
-    var newsContent = '第五届道惟尔杯完满闭幕，第五届道惟尔杯完满闭幕，第五届道惟尔杯完满闭幕';
+    var newsContent = '第五届道惟尔杯物联网创意大赛完满闭幕，余文轩《智能拐杖》荣获特等奖';
     if (newsContent.length > 27) {
         newsContent = newsContent.substr(0, 27) + '...';
     }

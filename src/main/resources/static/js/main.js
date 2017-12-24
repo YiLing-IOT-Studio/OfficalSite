@@ -448,6 +448,38 @@ $(document).ready(function() {
                 tileItem.flag = true;
             }
         }
+
+        (function() {
+            var tileItems = document.getElementsByClassName('tile-item-js');
+            var tileItemsLen = tileItems.length;
+            var tileImgs = [];
+
+            var timer = null;
+
+            for (var i = 0; i < tileItemsLen; i++) {
+                (function(i) {
+                    tileImgs[i] = tileItems[i].getElementsByClassName('person-img')[0];
+                })(i);
+            }
+
+            var count = 0;
+
+            var leftImgArr = ['../static/img/brand/brand_we_200x200.jpg', '../static/img/brand/brand_want_200x200.jpg', '../static/img/brand/brand_you_200x200.jpg'];
+            var centerImgArr = ['../static/img/brand/brand_want_200x200.jpg', '../static/img/brand/brand_you_200x200.jpg', '../static/img/brand/brand_we_200x200.jpg'];
+            var rightImgArr = ['../static/img/brand/brand_you_200x200.jpg', '../static/img/brand/brand_we_200x200.jpg', '../static/img/brand/brand_want_200x200.jpg'];
+
+            function autoAnim() {
+                if (count >= 3) {
+                    count = 0;
+                }
+                tileImgs[0].src = leftImgArr[count];
+                tileImgs[1].src = centerImgArr[count];
+                tileImgs[2].src = rightImgArr[count];
+                count++;
+            }
+
+            timer = setInterval(autoAnim, 3000);
+        })();
     })();
 
     (function() {

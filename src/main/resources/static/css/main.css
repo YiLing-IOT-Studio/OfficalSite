@@ -697,7 +697,8 @@ p {
     transform: rotateX(-90deg) translateZ(50px);
 }
 
-.tile-right .tile-item:hover .tile-item-content {
+
+/* .tile-right .tile-item:hover .tile-item-content {
     transform: rotateX(90deg);
     -webkit-transform: rotateX(90deg);
-}
+} */
