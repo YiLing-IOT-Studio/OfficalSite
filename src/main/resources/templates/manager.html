@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<a href="/haha" target="_blank">签到时间</a>
+<div sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
+    <a href="/haha" target="_blank">查看报名信息</a>
+    <a href="/glory" target="_blank">开源空间管理</a>
+    <a href="/glory" target="_blank">创意大赛报名查看</a>
+</div>
+</body>
+</html>

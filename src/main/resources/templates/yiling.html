@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 <head>
     <meta charset="UTF-8" />
@@ -43,12 +44,13 @@
                         </li>
                         <li class="nav-item">
                             <span class="line line-top"></span>
-                            <a class="nav-link" href="#"><i class="fa fa-paper-plane"></i>加入我们</a>
+                            <!--<a class="nav-link" href="http://119.23.202.55:8080/"><i class="fa fa-paper-plane"></i>加入我们</a>-->
+                            <a class="nav-link" href="/joinus"><i class="fa fa-paper-plane"></i>加入我们</a>
                             <span class="line line-bottom"></span>
                         </li>
                         <li class="nav-item nav-item-js" sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_USER')">
                             <!--<a class="nav-link" href="#"><i class="fa fa-user"></i>账号名</a>-->
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i><span id="span1" sec:authentication="name"></span></a>
+                            <a class="nav-link" href="/manager"><i class="fa fa-user"></i><span id="span1" sec:authentication="name"></span></a>
                         </li>
                         <li class="nav-item" sec:authorize="!hasAnyAuthority('ROLE_ADMIN','ROLE_USER')">
                             <span class="line line-top"></span>
@@ -259,7 +261,7 @@
                 <div class="members">
                     <div class="single-member effect-1">
                         <div class="member-image">
-                            <img src=" /img/famous/famous-liguodong-200x200.jpg" alt="liguodong" />
+                            <img src=" /img2/famous/famous-liguodong-200x200.jpg" alt="liguodong" />
                         </div>
                         <div class="member-info">
                             <h3>李国冬</h3>
@@ -360,7 +362,7 @@
                         <img data-src=" /img/nav-major-48.png" alt="培养方向" class="website-item" />
                         <span class="website-info">培养方向</span>
                     </a>
-                    <a href="#" target="_blank" class="yl-website-link text-center">
+                    <a href="/competition" target="_blank" class="yl-website-link text-center">
                         <img data-src=" /img/nav-competition-48.png" alt="创意大赛" class="website-item" />
                         <span class="website-info">创意大赛</span>
                     </a>

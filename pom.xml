@@ -80,16 +80,47 @@
 		</dependency>
 
 		<!--json-->
+		<!--<dependency>-->
+			<!--<groupId>net.sf.json-lib</groupId>-->
+			<!--<artifactId>json-lib</artifactId>-->
+			<!--<version>2.4</version>-->
+			<!--<classifier>jdk15</classifier>&lt;!&ndash;此句必须加，不然JSON不能用&ndash;&gt;-->
+		<!--</dependency>-->
+
+		<!--Json-->
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
-			<artifactId>json-lib</artifactId>
-			<version>2.4</version>
-			<classifier>jdk15</classifier><!--此句必须加，不然JSON不能用-->
+			<artifactId>json-lib-ext-spring</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160810</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.41</version>
+		</dependency>
+
+		<!--Gson-->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.2</version>
+		</dependency>
+
+		<!--在linux关闭springboot-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 	</dependencies>
 
 	<build>
+		<finalName>OfficeSite</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
