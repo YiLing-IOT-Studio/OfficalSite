@@ -1,6 +1,6 @@
-package com.iot.controller.officesite;
+package com.iot.controller;
 
-import com.iot.repository.officesite.MemberRepository;
+import com.iot.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;

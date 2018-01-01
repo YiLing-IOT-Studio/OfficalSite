@@ -1,4 +1,4 @@
-package com.iot.controller.joinus;
+package com.iot.controller;
 
 import com.iot.entity.joinus.UserInfo;
 import com.iot.service.joinus.GetUserInformation;

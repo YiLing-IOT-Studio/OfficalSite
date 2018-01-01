@@ -1,4 +1,4 @@
-package com.iot.repository.competition;
+package com.iot.repository;
 
 import com.iot.entity.competition.Files;
 import org.springframework.data.jpa.repository.JpaRepository;

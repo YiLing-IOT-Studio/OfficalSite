@@ -1,7 +1,7 @@
 package com.iot.service.joinus;
 
 import com.iot.entity.joinus.UserInfo;
-import com.iot.repository.joinus.UserRepository;
+import com.iot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

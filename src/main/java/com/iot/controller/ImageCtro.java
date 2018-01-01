@@ -1,9 +1,9 @@
-package com.iot.controller.spacebuilder;
+package com.iot.controller;
 
 import com.google.gson.Gson;
 import com.iot.entity.spacebuilder.Image;
-import com.iot.repository.spacebuilder.ImageRepository;
-import com.iot.utils.spacebuilder.FileUtils;
+import com.iot.repository.ImageRepository;
+import com.iot.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

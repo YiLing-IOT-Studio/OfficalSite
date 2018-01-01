@@ -1,4 +1,4 @@
-package com.iot.utils.spacebuilder;
+package com.iot.utils;
 
 import com.qiniu.api.auth.AuthException;
 import com.qiniu.api.auth.digest.Mac;

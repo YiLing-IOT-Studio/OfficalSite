@@ -1,7 +1,7 @@
-package com.iot.service.officesite;
+package com.iot.service.officalsite;
 
-import com.iot.repository.officesite.MemberRepository;
-import com.iot.entity.officesite.Member;
+import com.iot.repository.MemberRepository;
+import com.iot.entity.officalsite.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -182,7 +182,7 @@ window.onload=function(){
                 },
                 success:function () {
                     alert("报名成功！");
-                    window.location.replace("http://localhost:8080")
+                    window.location.replace("http://localhost:9999")
                     console.log(formJ);
                 },
                 error:function () {

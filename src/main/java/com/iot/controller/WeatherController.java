@@ -1,6 +1,6 @@
-package com.iot.controller.officesite;
+package com.iot.controller;
 
-import com.iot.utils.officesite.WeatherUtil;
+import com.iot.utils.WeatherUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

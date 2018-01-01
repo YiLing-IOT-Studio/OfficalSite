@@ -1,4 +1,4 @@
-package com.iot.entity.officesite;
+package com.iot.entity.officalsite;
 
 import lombok.Getter;
 import lombok.Setter;

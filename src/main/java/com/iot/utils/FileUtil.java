@@ -1,4 +1,4 @@
-package com.iot.utils.competition;
+package com.iot.utils;
 
 import com.iot.entity.competition.Files;
 import org.springframework.web.multipart.MultipartFile;

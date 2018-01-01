@@ -1,4 +1,4 @@
-package com.iot.repository.spacebuilder;
+package com.iot.repository;
 
 import com.iot.entity.spacebuilder.Image;
 import org.springframework.data.jpa.repository.JpaRepository;

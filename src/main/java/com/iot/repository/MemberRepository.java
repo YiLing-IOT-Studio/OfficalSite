@@ -1,6 +1,6 @@
-package com.iot.repository.officesite;
+package com.iot.repository;
 
-import com.iot.entity.officesite.Member;
+import com.iot.entity.officalsite.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

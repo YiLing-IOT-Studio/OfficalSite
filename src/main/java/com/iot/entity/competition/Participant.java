@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 
 /**
  * Created by 李攀 on 2017/12/29.
@@ -22,6 +23,7 @@ public class Participant {
     @Id
     @GeneratedValue
     private Integer id;
+    private Timestamp date;
 
     private String name1;
     private String number1;
@@ -40,7 +42,8 @@ public class Participant {
 
     public Participant() {}
 
-    public Participant(String name1, String number1, String major1, String grade1, String name2, String number2, String major2, String grade2, String name3, String number3, String major3, String grade3) {
+    public Participant(Timestamp date, String name1, String number1, String major1, String grade1, String name2, String number2, String major2, String grade2, String name3, String number3, String major3, String grade3) {
+        this.date = date;
         this.name1 = name1;
         this.number1 = number1;
         this.major1 = major1;

@@ -1,10 +1,10 @@
-package com.iot.controller.competition;
+package com.iot.controller;
 
-import com.iot.repository.competition.FileRepository;
-import com.iot.repository.competition.ParticipantRepository;
+import com.iot.repository.FileRepository;
+import com.iot.repository.ParticipantRepository;
 import com.iot.entity.competition.Files;
 import com.iot.entity.competition.Participant;
-import com.iot.utils.competition.FileUtil;
+import com.iot.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -81,10 +81,7 @@ public class FileController {
             e.printStackTrace();
             PrintWriter out = null;
             try {
-                out = response.getWriter();
                 out.print("<script>alert('上传失败! 请与工作人员联系~~');</script>");
-            } catch (IOException e1) {
-                e1.printStackTrace();
             } finally {
                 if (null != out) {
                     out.close();
@@ -143,11 +140,15 @@ public class FileController {
         String major3 = params.getParameter("options-3-major");
         String grade3 = params.getParameter("options-3-grade");
 
-        Participant participant = new Participant(name1,number1,major1,grade1,name2,number2,major2,grade2,name3,number3,major3,grade3);
+        if (!participantRepository.findParticipantByName(name1).isEmpty())
+            return "信息已存在，请勿重复提交！";
+
+        Participant participant = new Participant(new Timestamp(System.currentTimeMillis()),name1,number1,major1,grade1,name2,number2,major2,grade2,name3,number3,major3,grade3);
         participantRepository.save(participant);
 
         Files files = new Files();
         String filePath = "/file/UploadFiles" + "/" + UUID.randomUUID() + "/";
+        //String filePath = "D:/file/UploadFiles" + "/" + UUID.randomUUID() + "/";
         //String filePath = request.getSession().getServletContext().getRealPath("/") + "upload/";
         String fileUrl = filePath + fileName;
         files.setName(fileName);
@@ -159,17 +160,17 @@ public class FileController {
             fileRepository.save(files);
         } catch (Exception e) {
             e.printStackTrace();
-            PrintWriter out = null;
-            try {
-                out = response.getWriter();
-                out.print("<script>alert('提交失败! 请与工作人员联系~~');</script>");
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            } finally {
-                if (null != out) {
-                    out.close();
-                }
-            }
+            //PrintWriter out = null;
+            //try {
+            //    out = response.getWriter();
+            //    out.print("<script>alert('提交失败! 请与工作人员联系~~');</script>");
+            //} catch (IOException e1) {
+            //    e1.printStackTrace();
+            //} finally {
+            //    if (null != out) {
+            //        out.close();
+            //    }
+            //}
         }
         return "success";
     }
