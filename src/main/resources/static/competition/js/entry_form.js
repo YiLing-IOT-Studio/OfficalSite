@@ -78,7 +78,7 @@ function validate() {
             alert("请选择需要上传的文件！");
             return false;
         }
-        alert("恭喜您，报名成功！");
+        // alert("恭喜您，报名成功！");
         return true;
     }
     if(selectedValue==2){

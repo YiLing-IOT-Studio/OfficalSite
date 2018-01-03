@@ -43,4 +43,24 @@ public class IndexController {
     public String registration() {
         return "registration";
     }
+
+    @RequestMapping("/message")
+    public String message() {
+        return "message";
+    }
+
+    @RequestMapping("/failed")
+    public String failed() {
+        return "failed";
+    }
+
+    @RequestMapping("/other")
+    public String aboutus_other(){
+        return "aboutUS-other";
+    }
+
+    @RequestMapping("/aboutus")
+    public String index1(){
+        return "aboutUS";
+    }
 }

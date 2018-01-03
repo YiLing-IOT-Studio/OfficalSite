@@ -29,7 +29,7 @@ public class GetAllController {
     @Autowired
     SourceCodeService sourceCodeService;
 
-    @RequestMapping("/getAllInfo")
+    @RequestMapping("/getJoinUsInfo")
     @ResponseBody
     public JSONArray getAll(HttpServletRequest request){
 

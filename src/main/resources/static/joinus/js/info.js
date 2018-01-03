@@ -5,7 +5,7 @@
 function ajaxTest(currentPage) {
     $.ajax({
         type: 'get',
-        url: '/getAllInfo',
+        url: '/getJoinUsInfo',
         data: { rows: "10", pageNo: currentPage },
         dataType: 'json',
         success: function (data) {

@@ -7,6 +7,7 @@ import com.iot.entity.competition.Participant;
 import com.iot.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -79,51 +80,47 @@ public class FileController {
             fileRepository.save(files);
         } catch (Exception e) {
             e.printStackTrace();
-            PrintWriter out = null;
-            try {
-                out.print("<script>alert('上传失败! 请与工作人员联系~~');</script>");
-            } finally {
-                if (null != out) {
-                    out.close();
-                }
-            }
         }
         return "success";
     }
 
     @RequestMapping(value = "/submit", method = RequestMethod.POST)
     @ResponseBody
-    public String uploadFile(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public String uploadFile(HttpServletRequest request, HttpServletResponse response, Model model) throws IOException, ServletException {
 
         request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
+        //response.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
+
+        PrintWriter out=null;
+        //out = response.getWriter();
 
         MultipartHttpServletRequest params = ((MultipartHttpServletRequest) request);
         //List<MultipartFile> multipartFile = ((MultipartHttpServletRequest) request).getFiles("file");
         MultipartFile multipartFile = ((MultipartHttpServletRequest) request).getFile("file");
 
+        Long length = multipartFile.getSize();//返回的是字节，1M=1024KB=1048576字节 1KB=1024Byte
+        String fileName = multipartFile.getOriginalFilename();
+        String suffix = fileName.substring(fileName.lastIndexOf(".")).toLowerCase().trim();//文件后缀名
+
         String fileType = ".txt,.docx,.doc";
         //String[] typeArray = fileType.split(",");
 
         if (multipartFile.isEmpty()) {
-            return "failed";
-        }
+            out.print("<script>alert('文件大小为空，请检查 ！');</script>");
+            return "redirect:/registration";
 
-        Long length = multipartFile.getSize();//返回的是字节，1M=1024KB=1048576字节 1KB=1024Byte
-        if (length > 1048576) {
-            return "文件过大，限制大小为1M";
-        }
+        } else if (length > 1048576) {
+            out.print("<script>alert('文件过大，限制大小为1M ！');</script>");
+            return "redirect:/registration";
 
-        String fileName = multipartFile.getOriginalFilename();
-        String suffix = fileName.substring(fileName.lastIndexOf(".")).toLowerCase().trim();//文件后缀名
+        } else if (!Arrays.asList(fileType.split(",")).contains(suffix)) {
+            out.print("<script>alert('格式错误，请检查后缀名 ！');</script>");
+            return "redirect:/registration";
+        }
         //if (!suffix.equals("docx")) {
         //    return "格式错误，请检查后缀名";
         //}
-
-        if (!Arrays.asList(fileType.split(",")).contains(suffix)) {
-            return "格式错误，请检查后缀名";
-        }
 
         String name1 = params.getParameter("name1");
         String number1 = params.getParameter("id1");
@@ -140,15 +137,16 @@ public class FileController {
         String major3 = params.getParameter("options-3-major");
         String grade3 = params.getParameter("options-3-grade");
 
-        if (!participantRepository.findParticipantByName(name1).isEmpty())
-            return "信息已存在，请勿重复提交！";
+        if (!participantRepository.findParticipantByName(name1).isEmpty()) {
+            out.print("<script>alert('信息已存在，请勿重复提交！');</script>");
+            return "redirect:/index";
+        }
 
-        Participant participant = new Participant(new Timestamp(System.currentTimeMillis()),name1,number1,major1,grade1,name2,number2,major2,grade2,name3,number3,major3,grade3);
-        participantRepository.save(participant);
+        Participant participant = new Participant(new Timestamp(System.currentTimeMillis()), name1, number1, major1, grade1, name2, number2, major2, grade2, name3, number3, major3, grade3);
 
         Files files = new Files();
-        String filePath = "/file/UploadFiles" + "/" + UUID.randomUUID() + "/";
-        //String filePath = "D:/file/UploadFiles" + "/" + UUID.randomUUID() + "/";
+        //String filePath = "/file/UploadFiles" + "/" + UUID.randomUUID() + "/";
+        String filePath = "D:/file/UploadFiles" + "/" + UUID.randomUUID() + "/";
         //String filePath = request.getSession().getServletContext().getRealPath("/") + "upload/";
         String fileUrl = filePath + fileName;
         files.setName(fileName);
@@ -158,21 +156,14 @@ public class FileController {
         try {
             FileUtil.uploadFile(filePath, fileName, multipartFile);
             fileRepository.save(files);
+            participantRepository.save(participant);
+
+            return "redirect:/index";
         } catch (Exception e) {
             e.printStackTrace();
-            //PrintWriter out = null;
-            //try {
-            //    out = response.getWriter();
-            //    out.print("<script>alert('提交失败! 请与工作人员联系~~');</script>");
-            //} catch (IOException e1) {
-            //    e1.printStackTrace();
-            //} finally {
-            //    if (null != out) {
-            //        out.close();
-            //    }
-            //}
+
+            return "redirect:/failed";
         }
-        return "success";
     }
 
     @RequestMapping(value = "/fileDownload")
