@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
-                //.antMatchers("/*.html").permitAll()
+                .antMatchers("/manager").authenticated()
                 .and().formLogin().loginPage("/login").defaultSuccessUrl("/index",true).failureUrl("/fail").permitAll()
                 .and().sessionManagement().invalidSessionUrl("/")
                 .and().logout().deleteCookies("JSESSIONID")

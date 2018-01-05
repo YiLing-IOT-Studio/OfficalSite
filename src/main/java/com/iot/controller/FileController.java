@@ -1,9 +1,7 @@
 package com.iot.controller;
 
-import com.iot.repository.FileRepository;
-import com.iot.repository.ParticipantRepository;
 import com.iot.entity.competition.Files;
-import com.iot.entity.competition.Participant;
+import com.iot.repository.FileRepository;
 import com.iot.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,10 +32,7 @@ public class FileController {
     @Autowired
     FileRepository fileRepository;
 
-    @Autowired
-    ParticipantRepository participantRepository;
-
-    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    @RequestMapping(value = "/submit", method = RequestMethod.POST)
     @ResponseBody
     public String uploadFile(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "file") MultipartFile multipartFile) throws UnsupportedEncodingException, ServletException {
 
@@ -45,7 +40,7 @@ public class FileController {
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
 
-        String fileType = ".txt,.docx,.doc";
+        String fileType = ".docx,.doc";
         //String[] typeArray = fileType.split(",");
 
         if (multipartFile.isEmpty()) {
@@ -84,7 +79,7 @@ public class FileController {
         return "success";
     }
 
-    @RequestMapping(value = "/submit", method = RequestMethod.POST)
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public String uploadFile(HttpServletRequest request, HttpServletResponse response, Model model) throws IOException, ServletException {
 
@@ -107,42 +102,20 @@ public class FileController {
         //String[] typeArray = fileType.split(",");
 
         if (multipartFile.isEmpty()) {
-            out.print("<script>alert('文件大小为空，请检查 ！');</script>");
+
             return "redirect:/registration";
 
         } else if (length > 1048576) {
-            out.print("<script>alert('文件过大，限制大小为1M ！');</script>");
+
             return "redirect:/registration";
 
         } else if (!Arrays.asList(fileType.split(",")).contains(suffix)) {
-            out.print("<script>alert('格式错误，请检查后缀名 ！');</script>");
+
             return "redirect:/registration";
         }
         //if (!suffix.equals("docx")) {
         //    return "格式错误，请检查后缀名";
         //}
-
-        String name1 = params.getParameter("name1");
-        String number1 = params.getParameter("id1");
-        String major1 = params.getParameter("options-1-major");
-        String grade1 = params.getParameter("options-1-grade");
-
-        String name2 = params.getParameter("name2");
-        String number2 = params.getParameter("id2");
-        String major2 = params.getParameter("options-2-major");
-        String grade2 = params.getParameter("options-2-grade");
-
-        String name3 = params.getParameter("name3");
-        String number3 = params.getParameter("id3");
-        String major3 = params.getParameter("options-3-major");
-        String grade3 = params.getParameter("options-3-grade");
-
-        if (!participantRepository.findParticipantByName(name1).isEmpty()) {
-            out.print("<script>alert('信息已存在，请勿重复提交！');</script>");
-            return "redirect:/index";
-        }
-
-        Participant participant = new Participant(new Timestamp(System.currentTimeMillis()), name1, number1, major1, grade1, name2, number2, major2, grade2, name3, number3, major3, grade3);
 
         Files files = new Files();
         //String filePath = "/file/UploadFiles" + "/" + UUID.randomUUID() + "/";
@@ -156,7 +129,6 @@ public class FileController {
         try {
             FileUtil.uploadFile(filePath, fileName, multipartFile);
             fileRepository.save(files);
-            participantRepository.save(participant);
 
             return "redirect:/index";
         } catch (Exception e) {

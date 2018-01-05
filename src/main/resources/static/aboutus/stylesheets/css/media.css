@@ -52,6 +52,14 @@
     .Ot-content{
         text-align: center;
     }
+    /*成员*/
+    #e-content{
+        height: 300px;
+    }
+    .leftText-e p{
+        margin-top: 20%;
+        padding: 0 10%;
+    }
   /* life*/
 
     .each-img1{width: 45%;}

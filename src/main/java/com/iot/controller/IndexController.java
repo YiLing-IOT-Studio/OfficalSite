@@ -54,13 +54,38 @@ public class IndexController {
         return "failed";
     }
 
-    @RequestMapping("/other")
+    @RequestMapping("/family")
     public String aboutus_other(){
-        return "aboutUS-other";
+        return "family";
     }
 
     @RequestMapping("/aboutus")
-    public String index1(){
+    public String about(){
         return "aboutUS";
+    }
+
+    @RequestMapping("/direction")
+    public String direction(){
+        return "main";
+    }
+
+    @RequestMapping("/android")
+    public String android(){
+        return "android";
+    }
+
+    @RequestMapping("/flush")
+    public String flush(){
+        return "flushbonading";
+    }
+
+    @RequestMapping("/end")
+    public String back(){
+        return "webBack";
+    }
+
+    @RequestMapping("/fronted")
+    public String fronted(){
+        return "webFronted";
     }
 }

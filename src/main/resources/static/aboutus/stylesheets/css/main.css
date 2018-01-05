@@ -293,11 +293,11 @@ main img,#life img{background: url(../../img/loading.gif) 50% no-repeat;}
     /*background:rgba(64,74,89,0.8);*/
 }
 #e-content{
-    height: 500px;
+    height: 530px;
 }
 .mem-main{background: #404a59;}
 .leftText-e p{
-    margin-top: 27%;
+    margin-top: 38%;
     color:#C1FFC1;
     padding: 0 20%;
 }

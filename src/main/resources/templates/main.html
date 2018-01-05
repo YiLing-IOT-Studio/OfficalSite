@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1>-->
+    <title>培养方向 - 翼灵</title>
+    <link rel="short icon" type="image/x-icon" href="direction/img/favicon.ico"/>
+    <link rel="stylesheet" href="direction/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="direction/css/main.css"/>
+    <style>
+    </style>
+</head>
+<body>
+<!-- nav -->
+<nav class="nav navbar navbar-inverse navbar-toggleable-md  fixed-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <h1><a class="navbar-brand navbar-header" href="/direction">培养方向</a></h1>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li class="nav-item">
+                <a class="nav-link" href="/flush">嵌入式<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/android">安卓</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/end">web后端<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/fronted">web前端</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">翼灵官网</a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+<header>
+    <img class="bg" src="" data-url="direction/img/3-01.png" alt=""/>
+    <div class="logo">
+        <img src="" data-url="direction/img/logo.png" width="100%" alt="logo"/>
+        <div class="theme">
+            <h1>培养方向 - 翼灵物联工作室</h1>
+        </div>
+    </div>
+</header>
+<div class="main container-fluid">
+    <div class="intro row">
+        <div class="left col-5">
+            <div class="cont">
+                <a href="/flush"><span>嵌入式</span></a>
+                <p>Embeded System Development</p>
+                <p>培养内容涵盖单片机开发、STM32微控制器开发、ZIGBEE无线传感网络开发等技术。</p>
+            </div>
+            <a href="/flush"><img src="" data-url="direction/img/tb3.png" alt=""/></a>
+        </div>
+        <div class="right col-5">
+            <div class="cont">
+                <a href="/android"><span>安卓</span></a>
+                <p>Android development</p>
+                <p>培养内容涵盖C、Java编程语言基础、App界面设计、
+                    数据库基础、开源库应用、设计模式等。</p>
+            </div>
+            <a href="/android"><img src="" data-url="direction/img/tb2.png" alt=""/></a>
+        </div>
+    </div>
+    <div class="intro row bottom">
+        <div class="left col-5">
+            <div class="cont">
+                <a href="/end"><span>web后端</span></a>
+                <p>Web backend development</p>
+                <p>培养内容涵盖J2EE，数据库，通用框架和WEB服务端技术。</p>
+            </div>
+            <a href="/end"><img src="" data-url="direction/img/tb1.png" alt=""/></a>
+        </div>
+        <div class="right col-5">
+            <div class="cont">
+                <a href="/fronted"><span>web前端</span></a>
+                <p>Front-end web development</p>
+                <p>培养内容涵盖J2EE，数据库，通用框架和WEB服务端技术。</p>
+            </div>
+            <a href="/fronted"><img src="" data-url="direction/img/tb44.png" alt=""/></a>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div id="footer" class="container-fluid background-light-blue">
+    <div class="container">
+        <p class="text-center">
+            &copy; 2018
+            <a href="/">翼灵物联工作室</a>
+            <a href="https://github.com/YiLing-IOT-Studio">
+                <img src="" class="git-img" data-url="direction/img/icon-github.png" alt="github"/>
+            </a>
+        </p>
+    </div>
+</div>
+<div class="mask">
+    <span class="span">...正在拼命的加载...</span>
+</div>
+<script>
+    window.onload = function () {
+        var allTime = new Date().getTime();
+        var ImgList = document.querySelectorAll('img'), mask = document.querySelector('.mask'), num = 0;
+        for (var i = 0; i < ImgList.length; i++) {
+            ImgList[i].src = ImgList[i].getAttribute('data-url');
+            ImgList[i].onload = function () {
+                num++;
+            }
+        }
+        var timer = setInterval(function () {
+            if (num == ImgList.length) {
+                mask.style.display = 'none';
+                clearInterval(timer);
+            }
+        }, 200)
+    }
+</script>
+</body>
+</html>

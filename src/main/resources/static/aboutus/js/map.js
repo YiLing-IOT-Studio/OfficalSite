@@ -8,7 +8,7 @@ $.get('/getAllInfo', function (location_info) {
         });
     }
 
-    $.get('data/china.json', function (chinaJson) {
+    $.get('aboutus/data/china.json', function (chinaJson) {
         echarts.registerMap('china', chinaJson); // 注册地图
         var mapChart = echarts.init(document.getElementById('e-content'));
         console.log(res);
@@ -24,7 +24,7 @@ $.get('/getAllInfo', function (location_info) {
                 itemStyle: {					// 定义样式
                     normal: {					// 普通状态下的样式
                         areaColor: '#2a333d',
-                        borderColor: '#404a59'
+                        borderColor: '#111'
                     },
                     emphasis: {					// 高亮状态下的样式
                         areaColor: '#2a333d'
@@ -52,21 +52,33 @@ $.get('/getAllInfo', function (location_info) {
                     name: '销量', // series名称
                     type: 'scatter', // series图表类型
                     coordinateSystem: 'geo', // series坐标系类型
-                    data : res
+                    data : res,
+                    symbolSize:6,
+                    label: {
+                        normal: {
+                            show: false
+                        },
+                        emphasis: {
+                            show: false
+                        }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            borderColor: '#fff',
+                            borderWidth: 1
+                        }
+                    }
                 }
             ],
             visualMap: {
-                type: 'continuous', // 连续型
-                min: 0,       		// 值域最小值，必须参数
-                max: 400,			// 值域最大值，必须参数
-                calculable: true,	// 是否启用值域漫游
-                inRange: {
-                    color: ['#C1FFC1', '#76EE00', '#228B22']
-                    // 指定数值从低到高时的颜色变化
-                },
+                min: 0,
+                max: 5,
+                splitNumber: 5,
+                color: ['#d94e5d','#eac736','#50a3ba'],
                 textStyle: {
-                    color: '#fff'	// 值域控件的文本颜色
+                    color: '#fff'
                 }
+
             }
         };
         mapChart.setOption(option);

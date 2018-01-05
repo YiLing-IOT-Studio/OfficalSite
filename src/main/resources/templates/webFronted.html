@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1>-->
+    <title>Web前端 - 翼灵</title>
+    <link rel="short icon" type="image/x-icon" href="direction/img/favicon.ico" />
+    <link rel="stylesheet" href="direction/css/bootstrap.min.css" />
+    <script src="direction/js/jquery-3.2.1.min.js"></script>
+    <script src="direction/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="direction/css/index.css" />
+</head>
+<body>
+<!-- nav -->
+<div id="nav">
+    <nav class="nav navbar navbar-inverse navbar-toggleable-md  fixed-top">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1><a class="navbar-brand navbar-header" href="/fronted">Web前端</a></h1>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="nav-item">
+                    <a class="nav-link" href="/flush">嵌入式</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/android">安卓<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/end">web后端</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">翼灵官网</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+</div>
+<!--content-->
+<canvas id="canvas"></canvas>
+<header class="col-6">
+    <div id="head">
+        <h1>Web前端</h1>
+        <h2>Front-end web development</h2>
+    </div>
+    <span id="intro"></span><span id="timer">|</span>
+</header>
+<div class="container">
+    <div class="head-box row clearfix">
+        <div>
+            <hr/>
+            <h3>Group members</h3>
+            <hr/>
+        </div>
+    </div>
+    <div class="membersWall">
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/qdz1.jpg" alt="李友波" />
+            </div>
+            <div class="col-8 headman">
+                <h4>李友波</h4>
+                <ul>
+                    <li>2015级物联网工程专业</li>
+                    <li>Web前端开发组组长</li>
+                    <li>项目经历：翼灵物联网官网；博客系统；老司机校车服务系统；校园二手街</li>
+                    <li>邮箱：1620896714@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/qdz6.jpg" alt="曹雪梅" />
+            </div>
+            <div class="col-8">
+                <h4>曹雪梅</h4>
+                <ul>
+                    <li>2015级物联网工程专业</li>
+                    <li>Web前端开发组组员</li>
+                    <li>项目经历：翼灵招新网站；高等教育教学成果申报展示网站</li>
+                    <li>爱好：来一场说走就走的旅行、动漫、丧尸、偶尔绣绣织织</li>
+                    <li>座右铭：我不努力，你怎么知道我的潜力！</li>
+                    <li>421437649@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/qdz7.jpg" alt="李文斐" />
+            </div>
+            <div class="col-8">
+                <h4>李文斐</h4>
+                <ul>
+                    <li>2015级信息管理与信息系统专业</li>
+                    <li>Web前端开发组组员</li>
+                    <li>翼灵官网1.0；开放性实验“校园二手街”；电子科大精品课程网站</li>
+                    <li>爱好：看书、听歌、学习</li>
+                    <li>邮箱：15928543307@163.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/qdz4.jpg" alt="刘易民" />
+            </div>
+            <div class="col-8">
+                <h4>刘易民</h4>
+                <ul>
+                    <li>2015级信息管理与信息系统专业</li>
+                    <li>Web前端开发组组员</li>
+                    <li>项目经历：开放性实验“掌上石大”；翼灵博客系统</li>
+                    <li>座右铭：除非你变成大海，否则就会一直晕船。</li>
+                    <li>邮箱：15828511772@163.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/qdz5.jpg" alt="周邓" />
+            </div>
+            <div class="col-8">
+                <h4>周邓</h4>
+                <ul>
+                    <li>2015级信息管理与信息系统专业</li>
+                    <li>Web前端开发组组员</li>
+                    <li>项目经历：开放性实验“掌上石大”；翼灵博客系统</li>
+                    <li>爱好：吃、睡、旅行</li>
+                    <li>邮箱：1057650428@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/qdz10.jpg" alt="杨玉卿" />
+            </div>
+            <div class="col-8">
+                <h4>杨玉卿</h4>
+                <ul>
+                    <li>2016级物联网工程专业</li>
+                    <li>Web前端开发组组员</li>
+                    <li>座右铭：不管发生什么事,都请安静且愉快地接受人生,勇敢地、大胆地,而且永远地微笑着。</li>
+                    <li>邮箱：1057650428@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/lqy.jpg" alt="卢青莹" />
+            </div>
+            <div class="col-8">
+                <h4>卢青莹</h4>
+                <ul>
+                    <li>2016级物联网工程专业</li>
+                    <li>Web前端开发组组员</li>
+                    <li>爱好：吃、看电影、绘画</li>
+                    <li>邮箱：512099850@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/qdz2.jpg" alt="赵圆圆" />
+            </div>
+            <div class="col-8">
+                <h4>赵圆圆</h4>
+                <ul>
+                    <li>2014级物联网工程专业</li>
+                    <li>Web前端开发组组员</li>
+                    <li>项目经历：校园二手街；智慧农业网页设计；翼灵官网；基于LMAP算法测评的网页设计；高等教育教学成果申报展示网站</li>
+                    <li>获学院奖学金多次、校园女子风采大赛“最美设计师”、社团“优秀骨干”</li>
+                    <li>邮箱：swpu_zyy@163.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/qdz3.jpg" alt="陈媛媛" />
+            </div>
+            <div class="col-8">
+                <h4>陈媛媛</h4>
+                <ul>
+                    <li>2014级物联网工程专业</li>
+                    <li>Web前端开发组组员</li>
+                    <li>项目经历：翼灵道惟尔杯报名网站</li>
+                    <li>爱好：听歌</li>
+                    <li>座右铭：从现在开始，做一些会让未来的你感谢现在的自己的事。</li>
+                    <li>邮箱：1448604997@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/qd11.jpeg" alt="田宇" />
+            </div>
+            <div class="col-8">
+                <h4>田宇</h4>
+                <ul>
+                    <li>2016级网络工程专业</li>
+                    <li>Web前端开发组组员</li>
+                    <li>爱好：看剧，听歌，搞事情</li>
+                    <li>座右铭：做自己喜欢的事，成为自己喜欢的人</li>
+                    <li>邮箱：527919996@qq.com</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--footer-->
+<div id="footer" class="container-fluid background-light-blue">
+    <div class="container">
+        <p class="text-center">
+            &copy; 2018
+            <a href="/">翼灵物联工作室</a>
+            <a href="https://github.com/YiLing-IOT-Studio">
+                <img class="git-img" src="direction/img/icon-github.png" alt="github">
+            </a>
+        </p>
+    </div>
+</div>
+<!--<script src="direction/js/test.js"></script>-->
+<script src="direction/js/canvas.js"></script>
+<script src="direction/js/typeFront.js"></script>
+<!--<script src="direction/js/submit.js"></script>-->
+<!--<script src="direction/js/ajax.js"></script>-->
+<!--<script>-->
+<!--$.ajax({-->
+<!--type: 'GET',-->
+<!--url: 'http://192.168.1.139/back',-->
+<!--//        contentType: 'application/json',-->
+<!--dataType: 'text',-->
+<!--//        processData:false,-->
+<!--data: {-->
+<!--},-->
+<!--success: function (data) {-->
+<!--console.log(data);-->
+<!--},-->
+<!--error: function (jqXHR, textStatus) {-->
+<!--console.log(textStatus);-->
+<!--}-->
+<!--});-->
+
+<!--</script>-->
+</body>
+</html>

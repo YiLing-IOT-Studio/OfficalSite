@@ -123,6 +123,12 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!--解决thymleaf模板不能识别的问题-->
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.22</version>
+		</dependency>
 	</dependencies>
 
 	<build>

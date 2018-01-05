@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1>-->
+    <title>安卓 - 翼灵</title>
+    <link rel="short icon" type="image/x-icon" href="direction/img/favicon.ico" />
+    <link rel="stylesheet" href="direction/css/bootstrap.min.css" />
+    <script src="direction/js/jquery-3.2.1.min.js"></script>
+    <script src="direction/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="direction/css/index.css" />
+</head>
+<body>
+<!-- nav -->
+<div id="nav">
+    <nav class="nav navbar navbar-inverse navbar-toggleable-md  fixed-top">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1><a class="navbar-brand navbar-header" href="/android">安卓</a></h1>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="nav-item">
+                    <a class="nav-link" href="/flush">嵌入式</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/end">web后端<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/fronted">web前端</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">翼灵官网</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+<!--content-->
+<canvas id="canvas"></canvas>
+<header class="col-6">
+    <div id="head">
+        <h1>安卓</h1>
+        <h2>Android development</h2>
+    </div>
+    <span id="intro"></span><span id="timer">|</span>
+</header>
+<div class="container">
+    <div class="head-box row clearfix">
+        <div class="col-4">
+            <hr/>
+            <h3>Group members</h3>
+            <hr/>
+        </div>
+    </div>
+    <div class="membersWall">
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/and1.jpg" alt="唐光圣" />
+            </div>
+            <div class="col-8 headman">
+                <h4>唐光圣</h4>
+                <ul>
+                    <li>2015级物联网工程专业</li>
+                    <li>安卓开发组组长</li>
+                    <li>项目经历：开放实验室（二手市场）；智能钱包</li>
+                    <li>座右铭：犯其至难，图其致远</li>
+                    <li>获奖经历:Java程序设计大赛优胜奖</li>
+                    <li>工作室财务部部长，主要负责翼灵工作室的经费收支</li>
+                    <li>邮箱：420526316@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/and2.jpg" alt="吴豪杰" />
+            </div>
+            <div class="col-8">
+                <h4>吴豪杰</h4>
+                <ul>
+                    <li>2014级物联网工程专业</li>
+                    <li>2014级安卓开发组组长</li>
+                    <li>座右铭：乐观、积极、勤学、思考是我的标签，不悔梦归处，只恨未尽心，更好的自己，我，在路上。</li>
+                    <li>邮箱：mail@wuhaojie.top</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/and3.jpg" alt="王怡" />
+            </div>
+            <div class="col-8">
+                <h4>王怡</h4>
+                <ul>
+                    <li>2014级物联网工程专业</li>
+                    <li>安卓开发组组员</li>
+                    <li>获奖经历:TI杯省级一等奖(基于wifi的地下停车场寻车系统)</li>
+                    <li>邮箱：787140378@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/and4.jpg" alt="羊荣毅" />
+            </div>
+            <div class="col-8">
+                <h4>羊荣毅</h4>
+                <ul>
+                    <li>2014级物联网工程专业</li>
+                    <li>安卓开发组组员</li>
+                    <li>项目经历：基于大数据的专利申请APP开发</li>
+                    <li>座右铭：纵有疾风起，人生不言弃</li>
+                    <li>邮箱：yangrongyi_em@163.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/and5.jpg" alt="宋骐飞" />
+            </div>
+            <div class="col-8">
+                <h4>宋骐飞</h4>
+                <ul>
+                    <li>2015级物联网工程专业</li>
+                    <li>安卓开发组组员</li>
+                    <li>项目经历：全国物联网大赛；四川省创新创业训练计划并且成功立项</li>
+                    <li>工作室人事部部长，主要负责翼灵工作室的人员变动以及人员考核、2015级物联网工程一班班长</li>
+                    <li>邮箱：939191420@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/and6.jpg" alt="杜泽明" />
+            </div>
+            <div class="col-8">
+                <h4>杜泽明</h4>
+                <ul>
+                    <li>2015级物联网工程专业</li>
+                    <li>安卓开发组组员</li>
+                    <li>热情积极、喜欢音乐、喜欢旅游，喜欢为了目标不断努力的体验。</li>
+                    <li> 座右铭：只有坚持就能得到你想要的</li>
+                    <li>邮箱：1656499605@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/zxr.jpg" alt="曾鑫睿" />
+            </div>
+            <div class="col-8">
+                <h4>曾鑫睿</h4>
+                <ul>
+                    <li>2016级物联网工程专业</li>
+                    <li>安卓开发组组员</li>
+                    <li>活泼开朗，热情大方，勤学好问，不惧艰难。静若处子，动若脱兔。</li>
+                    <li>座右铭：人，最大的敌人是自己。</li>
+                    <li>邮箱：2258346736@qq.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="member row">
+            <div class="col-4">
+                <img src="direction/img/cjh.jpg" alt="陈金桁" />
+            </div>
+            <div class="col-8">
+                <h4>陈金桁</h4>
+                <ul>
+                    <li>2016级网络工程专业</li>
+                    <li>安卓开发组组员</li>
+                    <li>希望能在这个团队和大家好好相处，度过一个特别充实的大学三年，学习到知识。</li>
+                    <li>邮箱：1640297066@qq.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div id="footer" class="container-fluid background-light-blue">
+    <!--</div>-->
+    <div class="container">
+        <p class="text-center">
+            &copy; 2018
+            <a href="/">翼灵物联工作室</a>
+            <a href="https://github.com/YiLing-IOT-Studio">
+                <img class="git-img" src="direction/img/icon-github.png" alt="github">
+            </a>
+        </p>
+    </div>
+</div>
+<!--<script src="direction/js/test.js"></script>-->
+<script src="direction/js/canvas.js"></script>
+<script src="direction/js/typeAnd.js"></script>
+<!--<script src="direction/js/submit.js"></script>-->
+<!--<script src="direction/js/ajax.js"></script>-->
+<script>
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:7070/post',
+//        contentType: 'application/json',
+        dataType: 'json',
+//        processData:false,
+        data: {
+        },
+        success: function (data) {
+            var length = 0;
+            var j = 0;
+            var node = [];
+            for(var i in data)
+            {
+                length++;
+//                console.log(data[i]);
+//                for(var obj in data[i])
+//                {
+//                    console.log(obj);
+//                }
+                var firstNode = $('<div id="'+ i + '" class="member row">'+ data[i].name +'<button  class="btn cancel" index="' + j + '">删除</button></div>');
+                $('.membersWall:last').append(firstNode);
+                $('.cancel').eq(j).on('click',function () {
+                    alert(this)
+                    .remove();
+                })
+                j++;
+            }
+            console.log(length);
+        },
+        error: function (jqXHR, textStatus) {
+            console.log(textStatus);
+        }
+    });
+
+</script>
+</body>
+</html>
