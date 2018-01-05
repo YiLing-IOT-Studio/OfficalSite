@@ -61,7 +61,7 @@ public class IndexController {
 
     @RequestMapping("/aboutus")
     public String about(){
-        return "aboutUS";
+        return "aboutUs";
     }
 
     @RequestMapping("/direction")
