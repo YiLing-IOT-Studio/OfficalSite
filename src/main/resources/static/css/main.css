@@ -588,6 +588,7 @@ p {
     width: 298px;
     height: 318px;
     overflow: hidden;
+    background-image: url('../img/backend_300x320.jpg');
 }
 
 .tile-item .swiper-img {
@@ -720,4 +721,16 @@ p {
     padding: 5px 15px;
     font-size: 12px;
     cursor: pointer;
+}
+
+#pageloading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: lightblue;
+    z-index: 999;
+}
+
+#pageloading.pageloaded {
+    display: none;
 }
