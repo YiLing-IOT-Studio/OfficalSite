@@ -312,13 +312,15 @@ $("nav.fixed-top").autoHidingNavbar();
          var css = document.createElement('link');
          css.type = "text/css";
          css.rel = "stylesheet";
-         css.href = "../stylesheets/css/main.css";
+         // css.href = "../stylesheets/css/main.css";
+         css.href = "aboutus/stylesheets/css/main.css";
 
          // preload JS and CSS
          head.appendChild(css);
 
          // preload image
-         new Image().src = "../img/back3.jpg";
+         // new Image().src = "../img/back3.jpg";
+         new Image().src = "aboutus/img/back3.jpg";
 
 
      }, 1000);

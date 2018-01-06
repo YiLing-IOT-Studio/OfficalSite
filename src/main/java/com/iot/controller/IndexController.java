@@ -24,7 +24,7 @@ public class IndexController {
         return "joinus";
     }
 
-    @RequestMapping("/haha")
+    @RequestMapping("/info")
     public String info() {
         return "info";
     }
@@ -34,9 +34,9 @@ public class IndexController {
         return "manager";
     }
 
-    @RequestMapping("/competition")
+    @RequestMapping("/match")
     public String competition() {
-        return "competition";
+        return "match";
     }
 
     @RequestMapping("/registration")

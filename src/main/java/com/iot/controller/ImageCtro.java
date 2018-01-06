@@ -79,15 +79,6 @@ public class ImageCtro {
             String url = request.getParameter("url");
             FileUtils.delete(url);
             imageRepository.deleteByUrl(url);
-//            String[] idArray = ids.split(",");
-//            String[] urlArray = urls.split(",");
-//            if (!"".equals(idArray[0]) && !"".equals(urlArray[0])) {
-//                for (int i = 0; i < idArray.length; i++) {
-//                    FileUtils.delete(urlArray[i]);
-//                    imageRepository.deleteById(Integer.valueOf(idArray[i]));
-//                }
-//            }
-//            request.getSession().setAttribute("imageList", imageRepository.getByUserId(((User) request.getSession().getAttribute("user")).getId()));
         }
     }
 }
