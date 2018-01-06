@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>翼灵物联工作室</title>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&amp;ak=LKoy5ZY7sOIRQ17nIQ8zIr5I9ZNmVnzX"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/animate.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/css/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+</head>
+
+<body>
+    <div id="fullpage">
+        <div class="header">
+            <nav class="navbar navbar-light bg-faded navbar-toggleable-md">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#containerNavbarCenter" aria-controls="containerNavbarCenter" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse justify-content-md-center" id="containerNavbarCenter">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <span class="line line-top"></span>
+                            <a class="nav-link" href="/direction"><i class="fa fa-pie-chart"></i>培养方向</a>
+                            <span class="line line-bottom"></span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="line line-top"></span>
+                            <a class="nav-link" href="/glory"><i class="fa fa-globe"></i>开源空间</a>
+                            <span class="line line-bottom"></span>
+                        </li>
+                        <li class="nav-item active">
+                            <span class="line line-top"></span>
+                            <a class="nav-link" href="/"><i class="fa fa-home"></i>翼灵官网<span class="sr-only">(current)</span></a>
+                            <span class="line line-bottom"></span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="line line-top"></span>
+                            <!--<a class="nav-link" href="http://119.23.202.55:8080/"><i class="fa fa-paper-plane"></i>加入我们</a>-->
+                            <a class="nav-link" href="/joinus"><i class="fa fa-paper-plane"></i>加入我们</a>
+                            <span class="line line-bottom"></span>
+                        </li>
+                        <li class="nav-item nav-item-js" sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_USER')">
+                            <!--<a class="nav-link" href="#"><i class="fa fa-user"></i>账号名</a>-->
+                            <a class="nav-link" href="/manager"><i class="fa fa-user"></i><span id="span1" sec:authentication="name"></span></a>
+                        </li>
+                        <li class="nav-item" sec:authorize="!hasAnyAuthority('ROLE_ADMIN','ROLE_USER')">
+                            <span class="line line-top"></span>
+                            <a class="nav-link" href="/#signin"><i class="fa fa-user"></i>个人登录</a>
+                            <span class="line line-bottom"></span>
+                        </li>
+                        <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_USER')">
+                            <span class="line line-top"></span>
+                            <a class="nav-link" th:href="@{/logout}"><i class="fa fa-user"></i>退出登录</a>
+                            <span class="line line-bottom"></span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- page one -->
+        <div class="section">
+            <section class="sec-header text-center">
+                <h1 class="h2">翼灵物联工作室</h1>
+                <h2 class="h5">YiLing iot Studio</h2>
+                <div class="yl-intro">
+                    <div><span class="lead">翼灵物联工作室</span> - 一支追求技术、开发与自由的大学生团队。</div>
+                    <div class="yl-translation">YiLing-ers pursue technology, openness and freedom.</div>
+                </div>
+            </section>
+            <section class="sec-body centerpage" sec:authorize="!hasAnyAuthority('ROLE_ADMIN','ROLE_USER')">
+                <button class="btn btn-success" data-toggle="modal" data-target="#signInModal">使用翼灵 ID 登录内部系统</button>
+            </section>
+            <section class="sec-body-for-login" sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_USER')">
+                <a href="http://www.swpuiot.com/" target="_blank" class="yl-website-link text-center">
+                    <img src="/img/nav-official-48.png" alt="翼灵官网" class="website-item" />
+                    <span class="website-info">签到系统</span>
+                </a>
+                <a href="#" target="_blank" class="yl-website-link text-center">
+                    <img src="/img/nav-official-48.png" alt="翼灵官网" class="website-item" />
+                    <span class="website-info">博客系统</span>
+                </a>
+                <a href="#" target="_blank" class="yl-website-link text-center">
+                    <img src="/img/nav-official-48.png" alt="翼灵官网" class="website-item" />
+                    <span class="website-info">翼灵基因</span>
+                </a>
+            </section>
+        </div>
+        <div class="section openpage">
+            <section class="sec-header secpage">
+                <h2 class="h2">· Welcome ·</h2>
+                <h3 class="h5 text-center">翼 灵 物 联 工 作 室</h3>
+            </section>
+            <section class="sec-body">
+                <div class="tiles">
+                    <div class="tile-con tile-left">
+                        <div class="tile-item tile-date">
+                            <span class="date-week"></span>
+                            <span class="date-day"></span>
+                        </div>
+                        <div class="tile-item col-item-2 tile-brand">
+                            <p>翼灵物联工作室</p>
+                            <p>YiLing IOT Studio</p>
+                        </div>
+                        <div class="tile-item tile-item-js">
+                            <img src="/img/brand/brand_we_1_200x200.jpg" class="person-img" alt="brand_we" />
+                        </div>
+                        <div class="tile-item tile-item-js">
+                            <img src="/img/brand/brand_want_2_200x200.jpg" class="person-img" alt="brand_want" />
+                        </div>
+                        <div class="tile-item tile-item-js">
+                            <img src="/img/brand/brand_you_2_200x200.jpg" class="person-img" alt="brand_you" />
+                        </div>
+                        <div class="tile-item tile-weather">
+                            <div class="weather"></div>
+                            <div class="temp">
+                                <span class="temp-cur"></span>
+                                <span class="temp-max"></span>
+                                <span class="temp-min"></span>
+                            </div>
+                            <div class="city"></div>
+                        </div>
+                        <div class="tile-item tile-join">
+                            <a href="/aboutus" target="_blank" class="btn btn-success btn-sm">关于我们</a>
+                        </div>
+                        <div class="tile-item tile-join">
+                            <a href="/joinus" target="_blank" class="btn btn-success btn-sm">加入我们</a>
+                        </div>
+                    </div>
+                    <div class="tile-con tile-main">
+                        <div class="tile-item swiper">
+                            <img src="/img/16_300x320.jpg" class="swiper-img img1" alt="16" />
+                            <img src="/img/android_300x320.jpg" class="swiper-img img2" alt="android" />
+                            <img src="/img/embedded_300x320.jpg" class="swiper-img img3" alt="embedded" />
+                            <img src="/img/backend_300x320.jpg" class="swiper-img img4" alt="backend" />
+                        </div>
+                    </div>
+                    <div class="tile-con tile-right">
+                        <div class="tile-item">
+                            <span class="sticker">前端</span>
+                            <div class="tile-item-content">
+                                <img src="/img/frontend/fe_liyoubo_200x200.jpg" class="tile-img" alt="frontend" />
+                                <img src="/img/frontend/fe_liwenfei_200x200.jpg" class="tile-img" alt="frontend" />
+                            </div>
+                        </div>
+                        <div class="tile-item">
+                            <span class="sticker">后端</span>
+                            <div class="tile-item-content">
+                                <img src="/img/backend/be_xiongxiaoyu_200x200.jpg" alt="backend" />
+                                <img src="/img/backend/be_jinglili_200x200.jpg" alt="backend" />
+                            </div>
+                        </div>
+                        <div class="tile-item">
+                            <span class="sticker">荣誉</span>
+                            <div class="tile-item-content">
+                                <img src="/img/glory/ji-suan-ji-she-ji-da-sai-yi-deng-jiang-200x200.jpg" alt="glory" />
+                                <img src="/img/glory/wu-lian-wang-she-ji-jing-sai-200x200.jpg" alt="glory" />
+                            </div>
+                        </div>
+                        <div class="tile-item">
+                            <span class="sticker">嵌入式</span>
+                            <div class="tile-item-content">
+                                <img src="/img/embedded/em_yigangxi_200x200.jpg" alt="embedded" />
+                                <img src="/img/embedded/em-chengmiaohong-200x200.jpg" alt="embedded" />
+                            </div>
+                        </div>
+                        <div class="tile-item tile-news col-item-2">
+                            <span class="sticker">资讯</span>
+                            <div class="news-con"></div>
+                        </div>
+                        <div class="tile-item">
+                            <span class="sticker">安卓</span>
+                            <div class="tile-item-content">
+                                <img src="/img/android/an_tangguangsheng_200x200.jpg" alt="android" />
+                                <img src="/img/android/an_zengxinrui_200x200.jpg" alt="android" />
+                            </div>
+                        </div>
+                        <div class="tile-item tile-join">
+                            <span class="sticker">17 萌新</span>
+                            <div class="tile-item-content">
+                                <img src="/img/newMembers/new_fenglei_200x200.jpg" alt="newMembers" />
+                                <img src="/img/newMembers/new_xiaoyaqiong_200x200.jpg" alt="newMembers" />
+                            </div>
+                        </div>
+                        <div class="tile-item">
+                            <span class="sticker">项目</span>
+                            <div class="tile-item-content">
+                                <img src="/img/project/xun-che-xi-tong-200x200.jpg" alt="project" />
+                                <img src="/img/project/zhi-neng-an-quan-xie-200x200.jpg" alt="project" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- page two -->
+        <div class="section">
+            <section class="sec-header secpage">
+                <h2 class="h2">学习方向</h2>
+                <h3 class="h5">We learn.</h3>
+            </section>
+            <section class="sec-body">
+                <div class="card-list">
+                    <div class="card card-em">
+                        <img src="/img/sc-data-128.png" class="card-img-top" alt="embedded" />
+                        <section class="card-body">
+                            <div class="card-title">嵌入式</div>
+                            <div class="card-content">
+                                C <br/> 智能硬件 <br/> 物联网
+                            </div>
+                            <a href="/flush" class="btn btn-learn-more btn-sm">学习嵌入式</a>
+                        </section>
+                    </div>
+                    <div class="card card-bc">
+                        <img src="/img/cdp-data-128.png" class="card-img-top" alt="embedded" />
+                        <section class="card-body">
+                            <div class="card-title">Web 后端</div>
+                            <div class="card-content">
+                                Java <br/> 云服务 <br/> 数据库
+                            </div>
+                            <a href="/end" class="btn btn-learn-more btn-sm">学习 Web 后端</a>
+                        </section>
+                    </div>
+                    <div class="card card-an">
+                        <img src="/img/android-128.png" class="card-img-top" alt="embedded" />
+                        <section class="card-body">
+                            <div class="card-title">Android</div>
+                            <div class="card-content">
+                                Java <br/> 移动终端 <br/> PWA
+                            </div>
+                            <a href="/android" class="btn btn-learn-more btn-sm">学习 Android</a>
+                        </section>
+                    </div>
+                    <div class="card card-fe">
+                        <img src="/img/code-fe-128.png" class="card-img-top" alt="embedded" />
+                        <section class="card-body">
+                            <div class="card-title">Web 前端</div>
+                            <div class="card-content">
+                                HTML、CSS、JavaScript、ES6 <br/> Vue.js、webpack <br/> Node.js、Express、MongoDB <br/>
+                            </div>
+                            <a href="/fronted" class="btn btn-learn-more btn-sm">学习 Web 前端</a>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="section">
+            <section class="sec-header secpage">
+                <h2 class="h2">风云人物</h2>
+                <h3 class="h5">Person</h3>
+            </section>
+            <section class="sec-body secpage">
+                <div class="members">
+                    <div class="single-member effect-1">
+                        <div class="member-image">
+                            <img src="/img/famous/famous-liguodong-200x200.jpg" alt="liguodong" />
+                        </div>
+                        <div class="member-info">
+                            <h3>李国冬</h3>
+                            <h5>翼灵创始人</h5>
+                            <p>研究方向：无线传感器网络、大数据</p>
+                            <p>2014年，参与 Google 大学生创新训练项目。</p>
+                            <p>现工作于团博百众科技有限公司</p>
+                            <div class="social-touch">
+                                <a class="fb-touch" href="mailto:liguodongiot@foxmail.com">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a class="tweet-touch" href="404.html">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-member effect-1">
+                        <div class="member-image">
+                            <img src="/img/famous/famous-chengmiaohong-200x200.jpg" alt="chengmiaohong" />
+                        </div>
+                        <div class="member-info">
+                            <h3>陈庙红</h3>
+                            <h5>现工作于 - 大疆</h5>
+                            <p>在校期间获得国家级奖项 4 项，省级奖项 3 项。</p>
+                            <p>曾实习于世界 500 强爱立信（中国）</p>
+                            <p>“ 爱交流，爱技术，爱旅游，爱生活，爱思考。”</p>
+                            <div class="social-touch">
+                                <a class="fb-touch" href="mailto:cmhiot@126.com">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a class="tweet-touch" href="404.html">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-member effect-1">
+                        <div class="member-image">
+                            <img src="/img/famous/famous-wuhaojie-200x200.jpg" alt="wuhaojie" />
+                        </div>
+                        <div class="member-info">
+                            <h3>吴豪杰</h3>
+                            <h5>现工作于 - 美团</h5>
+                            <p>在校期间获得阿里巴巴、美团、百词斩等正式 offer。</p>
+                            <p>“ 乐观、积极、勤学、思考是我的标签，不悔梦归处，只恨未尽心，更好的自己，我，在路上。”</p>
+                            <div class="social-touch">
+                                <a class="fb-touch" href="mailto:w19961009@126.com">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a class="tweet-touch" href="https://github.com/a-voyager">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                                <a class="" href="http://wuhaojie.top/">
+                                    <i class="fa fa-globe"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="section">
+            <div class="yl-container text-center">
+                <h2 class="h2">加入我们</h2>
+                <h3 class="h5">Join us</h3>
+                <div class="yl-intro">
+                    <p>
+                        我们是一支以嵌入式开发特色，以云端、手机端、PC 端协作开发的团队。<br/>
+                        <span class="yl-translation">We are a team developing Embedded system specially, and collaborative with Cloud, Mobile and PC development.</span>
+                    </p>
+                    <p>
+                        如果你有改变世界的想法，如果你有脚踏实地的耐力，<br/>
+                        <span class="yl-translation">If you have the idea of changing the world, or have a down-to-earth endurance,</span>
+                    </p>
+                    <p>
+                        那么，你正是我们在找的人！<br/>
+                        <span class="yl-translation">we'll want you!</span>
+                    </p>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-success disabled"><span class="yl-time"></span> 届新生报名入口</button>
+                    <a href="/joinus" target="_blank" class="btn btn-primary">其他报名入口</a>
+                </div>
+                <div class="yl-notes">注：新生报名入口仅招新期间（每年9月）开放，其余时间，请选择"其他报名入口"</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="yl-container text-center">
+                <h2 class="h2">关于我们</h2>
+                <h3 class="h5">About us</h3>
+                <div class="yl-website">
+                    <a href="/" class="yl-website-link text-center">
+                        <img data-src="/img/nav-official-48.png" alt="翼灵官网" class="website-item" />
+                        <span class="website-info">翼灵官网</span>
+                    </a>
+                    <a href="/direction" target="_blank" class="yl-website-link text-center">
+                        <img data-src="/img/nav-major-48.png" alt="培养方向" class="website-item" />
+                        <span class="website-info">培养方向</span>
+                    </a>
+                    <a href="/match" target="_blank" class="yl-website-link text-center">
+                        <img data-src="/img/nav-competition-48.png" alt="创意大赛" class="website-item" />
+                        <span class="website-info">创意大赛</span>
+                    </a>
+                    <a href="/glory" target="_blank" class="yl-website-link text-center">
+                        <img data-src="/img/nav-open-48.png" alt="开源空间" class="website-item" />
+                        <span class="website-info">开源空间</span>
+                    </a>
+                    <a href="/joinus" target="_blank" class="yl-website-link text-center">
+                        <img data-src="/img/nav-new-48.png" alt="招新系统" class="website-item" />
+                        <span class="website-info">招新系统</span>
+                    </a>
+                    <a href="javascript:void(0);" target="_blank" class="yl-website-link text-center">
+                        <img data-src="/img/nav-exam-48.png" alt="考试系统" class="website-item" />
+                        <span class="website-info">考试系统</span>
+                    </a>
+                    <a href="/family" target="_blank" class="yl-website-link text-center">
+                        <img data-src="/img/nav-family-48.png" alt="翼灵一家人" class="website-item" />
+                        <span class="website-info">翼灵一家人</span>
+                    </a>
+
+                </div>
+                <div class="yl-location" id="allmap"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container text-center">
+                <i class="fa fa-copyright"></i>
+                <span class="yl-time"></span>
+                <span class="dot">·</span>
+                <a href="#">翼灵物联工作室</a>
+                <span class="dot">·</span>
+                <a href="https://github.com/YiLing-IOT-Studio/" target="_blank"><i class="fa fa-github"></i></a>
+                <span class="dot">·</span>
+                <i class="fa fa-balance-scale"></i> MIT
+            </div>
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div class="modal fade" id="signInModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <figure class="text-center">
+                        <img src="/img/logo.png" />
+                        <figcaption class="h6">登 录 翼 灵</figcaption>
+                    </figure>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signInForm" role="form" th:action="@{/login}" method="post">
+                        <div class="form-group">
+                            <label for="username" class="form-control-label">账号</label>
+                            <input type="text" id="username" name="username" class="form-control" placeholder="请输入账号" autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-control-label">密码</label>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="请输入密码" maxlength="16" autocomplete="off" />
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-lg btn-primary btn-block" id="inSubmitButton">登 录</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src=" /js/iconfont.js"></script>
+    <script src=" /js/jquery-3.2.1.min.js"></script>
+    <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". -->
+    <script src=" /js/jquery.easings.min.js"></script>
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script src=" /js/scrolloverflow.min.js"></script>
+    <script src=" /js/jquery.fullPage.min.js"></script>
+    <script src=" /js/bootstrap.min.js"></script>
+    <script src=" /js/move.min.js"></script>
+    <script src=" /js/funLib.js"></script>
+    <script src=" /js/tile.js"></script>
+    <script src=" /js/main.js"></script>
+</body>
+
+</html>

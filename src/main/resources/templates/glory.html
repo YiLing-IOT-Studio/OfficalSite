@@ -1,0 +1,504 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1>-->
+    <title>开源空间 - 翼灵</title>
+    <link rel="short icon" type="image/x-icon" href="http://p0f7xvqqj.bkt.clouddn.com/favicon.ico"/>
+    <link rel="stylesheet" href="spacebuilder/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="spacebuilder/css/index.css"/>
+    <script src="spacebuilder/js/jquery-3.2.1.js"></script>
+    <script src="spacebuilder/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<!-- nav -->
+<nav class="nav navbar navbar-inverse navbar-toggleable-md  fixed-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <h1><a class="navbar-brand navbar-header" href="#">开源空间</a></h1>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li class="nav-item">
+                <a class="nav-link" href="#item-display">项目展示<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#glory-display">荣誉展示</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#github">github</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">翼灵官网</a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+<div class="container-fluid" >
+    <div class="photo-album col-sm-12">
+        <header><h1><span>开源空间 - 翼灵物联工作室</span></h1></header>
+        <div class="photos">
+            <img class="large polaroid img1" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/51car-1.png"/>
+            <img class="medium polaroid img2" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/Android-1.png"/>
+            <img class="small polaroid img3" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/arduino-1.png"/>
+            <img class="medium polaroid img4" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/duo.jpg"/>
+            <img class="polaroid img5" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/compass-1.png"/>
+            <img class="polaroid img6" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-1.jpg"/>
+            <img class="polaroid img7" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-2.jpg"/>
+            <img class="medium polaroid img8" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/login-1.png"/>
+            <img class="medium polaroid img9" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-4.jpg"/>
+            <img class="polaroid img10" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/pro-1.png"/>
+            <img class="small polaroid img11" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/RFID-1.png"/>
+            <img class="medium polaroid img12" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/WIFI-1.png"/>
+            <img class="small polaroid img13" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-7.jpg"/>
+            <img class="small polaroid img14" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-5.jpg"/>
+            <img class="medium polaroid img15" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/tank-1.png"/>
+            <img class="medium polaroid img16" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/safeshoe.png"/>
+            <img class="medium polaroid img17" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-6.jpg"/>
+            <img class="polaroid img18" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-9.jpg"/>
+            <img class="polaroid img19" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-3.jpg"/>
+            <img class="medium polaroid img20" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-8.jpg"/>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="main-item">
+            <div class="header">
+                <h2 id="item-display">项目展示<p>The Project We've Done</p></h2>
+            </div>
+            <div class="col-12 items">
+                <div class="col-12 item-display">
+                    <img class="col-12" src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-odd col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/safeshoe.png"/>
+                    <div class="item-introduce item-introduce-odd col-6">
+                        <h3>基于自动导航及跌倒检测的智能安全性</h3>
+                        <span>陈庙红 吴豪杰</span>
+                        <p>
+                            本系统通过物联网感知、无线传输等技术，利用多传感器精确采集人体运动的加速度、角速度、偏转角及气压变量，
+                            采用自 主式惯性导航技术结合初始位置和目的位置进行算法拟和进行航迹推算，同时在Android移动端进行可视化展示。
+                            在此基础 上利用人体运动状态信息结合自主开发的跌倒检测算法实现高精度老人跌倒检测，实时回传位置信息
+                            及出行轨迹下发家人手 机，确保及时救援。另外，系统具有多项健康功能，时刻为需要的人提供服务。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12 rotate" src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-even col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/WIFI-1.png"/>
+                    <div class="item-introduce item-introduce-even col-6">
+                        <h3>基于WiFi的反向寻车系统</h3>
+                        <span>王怡 徐进</span>
+                        <p>
+                            本作品是基于wifi的地下停车场寻车系统。通过手机搜索商场内的wifi，根据信号强弱 来确定自己的到路由器的距离，
+                            再通过仿GPS的基站定位算法计算现在的位置（不需要连 接wifi），并将位置信息显示在手机上。当用户回到停车场时， 为用户提供导航功能。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12" src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-odd col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/RFID-1.png"/>
+                    <div class="item-introduce item-introduce-odd col-6">
+                        <h3>基于高频RFID的UHF快捷结账系统</h3>
+                        <span>项目成员</span>
+                        <p>
+                            本系统利用UHF 超高频射频识别技术结合无源电子标签，通过高效的搜索 算法，实现准确、快速、批量和远距离采
+                            集商品信息，达到一秒内扫描超过50件商品并计算结账，打破了目前超市所采用的传统逐一扫条形码的低效结账方式。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12 rotate" src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-even col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/wechat-2.png"/>
+                    <div class="item-introduce item-introduce-even col-6">
+                        <h3>基于微信平台的智能家居应用系统</h3>
+                        <span>王萍</span>
+                        <p>
+                            本系统是基于微信平台的智能家居应用系统。对用户来说，用户在 微信公众号上点击不同的选项，
+                            将发送不同的请求给家庭 云服务器；对 系统而言，树莓派采集传感器的数据并发送至服务器。
+                            树莓派采集传感器的数 据并发送至服务器。 服务器 根据不同的请求对传感器发送指令以及进行数据的处理，
+                            并将必要的数据存至数据库中。通过多个传感器进行对室内门锁， 灯具，空调，冰箱 ，窗子的监控，采集室内温度，
+                            湿度，烟雾浓度等信息。从而实现无论何时 何地都能对房屋进行监管。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12 " src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-odd col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/51car-1.png"/>
+                    <div class="item-introduce item-introduce-odd col-6">
+                        <h3>基于51单片机的智能循迹小车</h3>
+                        <span>易小风</span>
+                        <p>
+                            该智能循迹小车采用89c52芯片，配合红外传感器、超声波传感器、HC06蓝牙模 块、wifi模块，能自主实现
+                            循黑线高速运行，自主避障并返回数据给手机和电脑，同 时也可以用手机或电脑对其进行控制，也可以加入其他
+                            其他传感器实现特定的功能如：火焰传感器，温度传感器、声波传感器实现火灾现场的特定需求功能。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12 rotate" src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-even col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/Android-1.png"/>
+                    <div class="item-introduce item-introduce-even col-6">
+                        <h3>基于Android平台的智能手机管家应用</h3>
+                        <span>宋骐飞</span>
+                        <p>
+                            本应用由Android组成员合作完成，模仿市面上已有的手机管家应用，实现手 机防盗、通讯拦截、应用进程管理、
+                            流量管理等诸多功能，同时支持桌面小插件和 自动更新检查。应用开发技术涉及网络、文本解析、数据库、UI设计等，
+                            开发过程使用Git进行版本管理。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12 " src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-odd col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/arduino-1.png"/>
+                    <div class="item-introduce item-introduce-odd col-6">
+                        <h3>基于arduino的激光雕刻机</h3>
+                        <span>易小风</span>
+                        <p>
+                            基于arduino的激光雕刻机采用了两个废旧光驱架作为雕刻机XY轴，控板更改为性 价比更高、兼容性更强的升级版
+                            UNO，整体结构美观，采用250mw红光激光头能在普通 硬纸板，PVC板材料上雕刻，也可以在手机后盖上雕刻图案和
+                            文字喔。也可以增加Z轴功能可实现3D雕刻的拓展。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12 rotate" src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-even col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/login-1.png"/>
+                    <div class="item-introduce item-introduce-even col-6">
+                        <h3>HTTP协议下的登录注册系统</h3>
+                        <span>项目成员</span>
+                        <p>
+                            本作品旨在帮助成员理解B/S和C/S架构，粗略实现了登录注册功能。用 户能够通过本系统提供的安卓客户端软件和
+                            浏览器网页端进行用户注册， 注册信息加密存储在云端数据库，并在用户登录时取出信息进行比对，同时提供保持
+                            用户登录状态的功能。其他传感器实现特定的功能如：火焰传感器，温度传感器、声波传感器实现火灾现场的特定需
+                            求功能。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12" src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-odd col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/compass-1.png"/>
+                    <div class="item-introduce item-introduce-odd col-6">
+                        <h3>智能手机指南APP</h3>
+                        <span>宋骐飞</span>
+                        <p>
+                            本应用由安卓组成员共同协作完成。通过通过磁力计和加速度计的数据 通过一定的算法得到手机的方位，然后通过对比
+                            前一刻方位和现在手机方 位算出手机旋转的角度，再根据手机实际旋转的角度去旋转指南针的imag eview。如此不管
+                            手机如何转动，手机画面中的指南针都是相对地面静止的, 以此来达到指南针的指明方向的效果。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12 rotate" src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-even col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/tank-1.png"/>
+                    <div class="item-introduce item-introduce-even col-6">
+                        <h3>基于JavaGUI的坦克大战游戏</h3>
+                        <span>项目成员</span>
+                        <p>
+                            本项目是Android组每个人都单独完成了一遍，坦克游戏开发是java中最为经典的一个项目 之一，是每一个学习
+                            Android的人必须完成的项目，本项目包含了所有java的基本知识，从界面 到图形绘制到画面渲染再到线程然后
+                            文件读写，中间还有对象的继承，接口的实现综合的应用了Java的基本知识实现初始界面选着关卡，
+                            从而选择不同难度， 界面中的坦克在规定范围内自由，随机运动，发射子弹，爆破效果，游戏过程及 结果保存记录，
+                            下次游戏可选择继续游戏或者重新开始。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12" src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-odd col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/pro-1.png"/>
+                    <div class="item-introduce item-introduce-odd col-6">
+                        <h3>第八届高等教育四川省教学成果申报展示</h3>
+                        <span>赵圆圆 曹雪梅</span>
+                        <p>
+                            成果主要解决了以下教学问题：
+                            1）以知识传授为主的传统教学模式难以适应自媒体时代的学生特点，常规化翻转课堂难以大规模落地；
+                            2）不同高校大学计算机基础类课程师资水平差异较大，学生基础参差不齐，教学目标达成度不高，计算思维能力培养不足；
+                            3）线上优质教学资源利用率低，本土化困难。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 item-display">
+                    <img class="col-12 rotate" src="" alt="background" data-url="http://p0f7xvqqj.bkt.clouddn.com/dis.png"/>
+                    <img class="item-imgs-even col-6" src="" alt="item" data-url="http://p0f7xvqqj.bkt.clouddn.com/duo.jpg"/>
+                    <div class="item-introduce item-introduce-even col-6">
+                        <h3>多长肉花卉科技有限公司</h3>
+                        <span>李文斐 周成</span>
+                        <p>
+                            本项目前端主要用了 html、css、js、jQuery等基本前端知识，配合媒体查询，结合相似网站设计，实现多终端页面的较完美呈现。
+                            后端采用当前最流行的SpringMVC框架，持久层采用Hibernate，同时项目的安全基于Spring Security，前端视图采用基于原生html的Thymeleaf模板。项目没有xml配置文件，完全采用更为强大的Java配置，项目依赖基于Maven。
+                        </p>
+                    </div>
+                </div>
+                <div class="add col-12" sec:authorize="hasAnyAuthority('ROLE_ADMIN')" >
+                    <!-- Button trigger modal -->
+                    <button type="button" class="addMsg btn" data-toggle="modal" data-target="#myModal1" ></button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">添加项目</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form name="upload_form" th:action="@{/image?type=1}" enctype="multipart/form-data" method="post">
+                                        <p>
+                                            <label for="itemName">项目名称：</label>
+                                            <textarea name="itemName" id="itemName" cols="30" rows="1"></textarea>
+                                        </p>
+                                        <p>
+                                            <label for="leader">项目负责人：</label>
+                                            <textarea name="leader" id="leader" cols="30" rows="1"></textarea>
+                                        </p>
+                                        <p>
+                                            <label for="introduce">项目简介：</label>
+                                            <textarea name="introduce" id="introduce" cols="30" rows="4"></textarea>
+                                        </p>
+                                        <p>
+                                            <label for="itemImg">项目图片：</label>
+                                            <input type="file" id="itemImg" name="image" accept="image/*"/>
+                                        </p>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                        <button id="submit" type="submit" class="btn btn-primary">提交</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header">
+                <h2 id="glory-display">荣誉墙<p>The Honor Of Our Team</p></h2>
+            </div>
+            <div class="col-12 glorys">
+                <div class="col-12 glory-wall clearfix">
+                    <div class="col-6 pull-left glory-left">
+                        <div><img class="col-8 pull-left" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-1.jpg"/></div>
+                        <div>
+                            <h3>中国大学生计算机设计大赛<br/>全国总决赛一等奖</h3>
+                            <span>陈庙红 吴豪杰</span>
+                            <p>
+                                2016年8月14日至18日，由教育部高等学校计算机专业教学指导委员会和中国教育电视台等联合主办的2016年（第九届） 中国大学生计算机设计大赛全国总决赛（中 华民族文化元素与软件服务外包类）在南京东南大学举办。本次大赛吸引了 全国高校万名师生的几千件作品，经过5个月的校赛、省赛层层选拔，最终角逐出来自北京大学、同济大学、解放军空军 航空大学、重庆大学、西安电子科技大学等两百多所本科院校的1000多名师生、439件作品入围全国总决赛，参赛队伍规模和竞赛题目质量均远超往届
+                            </p>
+                            <p>
+                                翼灵物联工作室梁宗文老师指导的陈庙红、吴豪杰同学凭借项目作品《基于自动导航及跌倒检测的智能安全鞋》获全国总决赛一等奖佳绩。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6 pull-right glory-right">
+                        <div><img class="col-8 pull-right" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-2.jpg"/>
+                            <div>
+                                <h3>第三届全国高校物联网应用创新大赛<br/>西南赛区一等奖</h3>
+                                <span>陈庙红 吴豪杰</span>
+                                <p>
+                                    2016年6月5日，6月6日，第三届全国高校物联网应用创新大赛西南赛区决赛在成都成功举行。此赛是国内首个物联网学科竞赛。该赛事由教育部 科技发展中心主办，清华大学软件学院、 清华信息科学与技术国家实验室物 联网技术中心、ACM中国理事会联合承办。届时来自四川大学、 重庆大学、电子科技大学、西南石油大学等参赛队伍汇集成都大学进行项目角逐。
+                                </p>
+                                <p>
+                                    翼灵物联工作室陈庙红、吴豪杰同学凭借优秀的作品和出色的答辩，斩获西南赛区一等奖佳绩。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 glory-wall clearfix">
+                    <div class="col-6 pull-left glory-left">
+                        <div><img class="col-8 pull-left" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-3.jpg"/></div>
+                        <div>
+                            <h3>2016（TI杯）全国大学生物联网设计竞赛<br/>华中及西南赛区一等奖</h3>
+                            <span>王怡 徐进</span>
+                            <p>
+                                2016年7月，2015年全国大学生物联网设计竞赛 华中及西南赛区”在成都四川大学举行，此赛由教育部高等学校 计算机类专业教学指导委员会主办，是以学科竞赛推动专业建设、 培养大学生创新能力为目标，面向高校大学生举办的全国性竞赛。 届时来自电子科技大学、四川大学、 武汉大学、重庆邮电大学等高校参加赛事，本届比赛参赛队伍规模和竞赛题目质量均远超往届。
+                            </p>
+                            <p>
+                                “翼灵物联网工作室”王怡、徐进同学凭借作品《基于wifi的地下停车场寻车系统》获得华中及西南赛区一等奖佳绩。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6 pull-right glory-right">
+                        <div><img class="col-8 pull-right" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-4.jpg"/>
+                            <div>
+                                <h3>2015（TI杯）全国大学生物联网设计竞赛<br/>华中及西南赛区特等奖</h3>
+                                <span>陈庙红 夏明辉 李永乐</span>
+                                <p>
+                                    2015年8月6日，来自电子科技大学、四川大学、华中科技大学、西南石油大学等参赛队汇聚武汉华中科技大学进行全国大学生物联网设计竞赛华中及西南赛区项目角逐。全国大学生物联网设计竞赛是由教育部高等学校计算机类专业教学指导委员会主办，是以学科竞赛推动专业建设、 培养大学生创新能力为目标，面向高校大学生举办的全国性竞赛。
+                                </p>
+                                <p>
+                                    翼灵物联工作室成员的陈庙红、夏明辉、李永乐在周瑞东老师的指导下凭借作品《井场风向风速监测及疏散方向指示系统设计》获得华中及西南赛区特等奖佳绩。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 glory-wall clearfix">
+                    <div class="col-6 pull-left glory-left">
+                        <div><img class="col-8 pull-left" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-5.jpg"/></div>
+                        <div>
+                            <h3>2015（TI杯）全国大学生物联网设计竞赛<br/>全国总决赛二等奖</h3>
+                            <span>陈庙红 夏明辉</span>
+                            <p>
+                                2015年9月23日至26日，“2015年全国大学生物联网设计竞赛（TI）杯全国总决赛”在无锡太湖国际博览中心举行， 来自电子科技大学、四川大学、华中科技大学、 武汉大学、哈尔滨工业大学、西北工业大学等全国近90所高校的121 支参赛队参加总决赛，本届比赛作为2015年第六届中国国际物联网博览会的同期赛事举办，参赛队伍规模和竞赛题目质量均远超往届。
+                            </p>
+                            <p>
+                                翼灵物联工作室成员陈庙红、夏明辉同学周瑞东老师的指导下，凭借作品《井场风向风速监测及疏散方向指示系统设计》 获得全国总决赛二等奖佳绩。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6 pull-right glory-right">
+                        <div><img class="col-8 pull-right" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-6.jpg"/>
+                            <div>
+                                <h3>华迪杯四川省大学生计算机设计大赛<br/>四川省二等奖</h3>
+                                <span>陈庙红 吴豪杰</span>
+                                <p>
+                                    2016年华迪杯·中国大学生计算机设计大赛四川省级赛在成都医学院圆满落下帷幕。本届大赛由华迪公司友情赞助， 有四川大学、电子科技大学、西华大学、四川师范大学等全省 39所高校的近300支团队参赛。
+                                </p>
+                                <p>
+                                    2016年5月15日，翼灵物联工作室成员陈庙红、吴豪杰同学在梁宗文老师的指导下，凭借作品 《基于自动导航及跌倒检测的智能安全鞋》获四川省赛二等奖的佳绩。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 glory-wall clearfix">
+                    <div class="col-6 pull-left glory-left">
+                        <div><img class="col-8 pull-left" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-7.jpg"/>
+                            <div>
+                                <h3>2015（TI杯）全国大学生物联网设计竞赛<br/>华中及西南赛区一等奖</h3>
+                                <span>陈庙红 吴豪杰</span>
+                                <p>
+                                    2015年8月，2015年全国大学生物联网设计竞赛（TI杯）华中及西南地区决赛在华中科技大学举办，此赛是由教育部高等学校 计算机类专业教学指导委员会主办，是以学科竞赛推动专业建设、 培养大学生创新能力为目标，面向高校大学生举办的全国性竞赛。参赛中不乏华中科技大学、 武汉大学、武汉 理工大学、四川大学等实力强劲的对手。
+                                </p>
+                                <p>
+                                    由周瑞东老师指导的魏雪梅、熊旭东、张西、霍敏同学在全国大学生 物联网设计竞赛华中及西南赛区一等奖。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 pull-right glory-right">
+                        <div><img class="col-8 pull-right" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-8.jpg"/>
+                            <div>
+                                <h3>2015（TI杯）全国大学生物联网设计竞赛<br/>华中及西南赛区二等奖</h3>
+                                <span>李一 尤晨飞 严诗雨</span>
+                                <p>
+                                    2014年 8月9日2014年第一届全国大学生物联网设计竞赛（TI杯）”华中及西南赛区决赛在武汉大学计算机学院隆重举行。此赛由教育部高等学校 计算机类专业教学指导委员会主办，是以学科竞赛推动专业建设、 培养大学生创新能力为目标，面向高校大学生举办的全国性竞赛。此次全国性比赛分为3个阶段进行，分别 是各分赛区初赛、各分赛区决赛、全国总决赛。
+                                </p>
+                                <p>
+                                    翼灵物联工作室成员李一、尤晨飞、严诗雨经历层层选拔，入围华中及西南赛区决赛。在武汉大学的项目角逐中获得二等奖的优异成绩。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 glory-wall clearfix">
+                    <div class="col-6 pull-left glory-left">
+                        <div><img class="col-8 pull-left" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-9.jpg"/>
+                            <div>
+                                <h3>2016 华为杯中国大学生智能设计竞赛<br/>全国三等奖</h3>
+                                <span>陈庙红 吴豪杰</span>
+                                <p>
+                                    华为杯中国大学生智能设计竞赛是由 中国人工智能学会、华为科技有限公司、教育部高校计算机类专业教学指导委员 会联合主办的全国性大学生竞赛。
+                                </p>
+                                <p>
+                                    2016.8月翼灵物联工作室成员陈庙红、吴豪杰经历层层选拔，入围华为杯决赛。在电子科技大学的项目竞赛角逐中 获得全国三等奖的优异成绩。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 pull-right glory-right">
+                        <div><img class="col-8 pull-right" src="" alt="" data-url="http://p0f7xvqqj.bkt.clouddn.com/glory-10.jpg"/>
+                            <div>
+                                <h3>2016全国高校互联网应用创新大赛<br/>全国二等奖</h3>
+                                <span>陈庙红</span>
+                                <p>
+                                    2016年第三届全国高校物联网应用创新大赛是面向全国高校开展的物联网竞赛活动，是由教育部科技发展中心主管，互联网应用创新开放 平台联盟主办，清华大学承办，微软亚洲研究院/百度公司亚马逊AWS协办的重大物联网科技赛事。旨在促进高校物联网教育方法的交流和教学质量的提升，激励高校对物联网创新应用人才的培养， 培育和推广基于物联网应用的创新型科研成果，推动物联网产业的发展。
+                                </p>
+                                <p>
+                                    翼灵物联网工作室的陈庙红、吴豪杰与来自四川大学、上海交通大学、浙江大学参赛队等100多支队伍齐聚物联网之城无锡进行角逐，最终凭借优秀的作品获得全国二等奖的优异成绩。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add col-12" sec:authorize="hasAnyAuthority('ROLE_ADMIN')" >
+                    <!-- Button trigger modal -->
+                    <button type="button" class="addMsg btn" data-toggle="modal" data-target="#myModal2"></button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel1">添加荣誉</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form name="upload_form" th:action="@{/image?type=2}" enctype="multipart/form-data" method="post">
+                                        <div>
+                                            <p>
+                                                <label for="gloryName">项目名称：</label>
+                                                <textarea name="gloryName" id="gloryName" cols="30" rows="1"></textarea>
+                                            </p>
+                                            <p>
+                                                <label for="ranking">获奖等级：</label>
+                                                <textarea name="ranking" id="ranking" cols="30" rows="1"></textarea>
+                                            </p>
+                                            <p>
+                                                <label for="gLeader">项目成员：</label>
+                                                <textarea name="gLeader" id="gLeader" cols="30" rows="1"></textarea>
+                                            </p>
+                                            <p>
+                                                <label for="contestIntro">比赛简介：</label>
+                                                <textarea name="contestIntro" id="contestIntro" cols="30" rows="4"></textarea>
+                                            </p>
+                                            <p>
+                                                <label for="result">入围结果：</label>
+                                                <textarea name="result" id="result" cols="30" rows="4"></textarea>
+                                            </p>
+                                            <p>
+                                                <label for="gloryImg">奖状图片：</label>
+                                                <input type="file" id="gloryImg" name="image" accept="image/*"/>
+                                            </p>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                            <button id="submit1" type="submit" class="btn btn-primary">提交</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header">
+                    <h2 id="github">GitHub<p>Our Team's GitHub</p></h2>
+                </div>
+                <div class="github-link col-12 clearfix">
+                    <div class="col-7 pull-left">
+                        <img src="" alt="github-yiling" data-url="http://p0f7xvqqj.bkt.clouddn.com/github-yiling.png"/>
+                    </div>
+                    <div class="col-4 pull-left">
+                        <p>GitHub是一个面向开源及私有软件项目的托管平台，我们把GitHub作为免费的远程仓库，可以将个人的开源项目放在GitHub。除此之外，GitHub还是一个开源协作社区，通过GitHub，既可以让别人参与你的开源项目，也可以参与别人的开源项目。</p>
+                        <p>我们团队在GitHub建立<a href="https://github.com/YiLing-IOT-Studio" target="_blank">翼灵物联网工作室</a>的官方GitHub，欢迎访问。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer-->
+    <div id="footer" class="container-fluid background-light-blue">
+        <div class="container">
+            <p class="text-center">
+                &copy; 2018
+                <a href="/">翼灵物联工作室</a>
+                <a href="https://github.com/YiLing-IOT-Studio" target="_blank">
+                    <img class="git-img" src="" alt="github" data-url="http://p0f7xvqqj.bkt.clouddn.com/icon-github.png"/>
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="mask">
+        <span class="span">...正在拼命的加载...</span>
+    </div>
+    <script src="spacebuilder/js/index.js"></script>
+    <script src="spacebuilder/js/ajax.js"></script>
+</div>
+</body>
+</html>
